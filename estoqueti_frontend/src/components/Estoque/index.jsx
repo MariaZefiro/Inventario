@@ -116,15 +116,6 @@ export default function Estoque() {
                                             groupBy={(option) => option.category}
                                             getOptionLabel={(option) => option.title}
                                         />
-                                        <Box sx={{ my: 2, display: 'flex', gap: 1 }}>
-                                            <Chip
-                                                variant="soft"
-                                                size="sm"
-                                                endDecorator={<ChipDelete variant="soft" />}
-                                            >
-                                                Novo
-                                            </Chip>
-                                        </Box>
                                     </Box>
                                 </AccordionDetails>
                             </Accordion>

@@ -21,11 +21,44 @@ from cabos.list_cabos import list_cabos_bp
 #DESKTOPS
 from desktops.list_desktops import list_desktops_bp
 
+#FONTES
+from fontes.list_fontes import list_fontes_bp
+
+#MEMORIAS
+from memorias_ram.list_ram import list_ram_bp
+
+#MONITORES
+from monitores.list_monitores import list_monitores_bp
+
+#NOTEBOOKS
+from notebooks.list_notebooks import list_notebooks_bp
+
+#NUCS
+from nucs.list_nucs import list_nucs_bp
+
+#PERIFERICOS
+from perifericos.list_perifericos import list_perifericos_bp
+
+#REDES
+from redes.list_redes import list_redes_bp
+
+#TELEFONIA
+from telefonia.list_telefonia import list_telefonia_bp
+
 # Lista dos blueprints para registro
 blueprints = [
     login_bp,
     list_adaptadores_bp,
     list_armazenamento_bp,
     list_cabos_bp,
-    list_desktops_bp
+    list_desktops_bp,
+    list_fontes_bp,
+    list_ram_bp,
+    list_monitores_bp,
+    list_notebooks_bp,
+    list_nucs_bp,
+    list_perifericos_bp,
+    list_redes_bp,
+    list_telefonia_bp
+    
 ]

@@ -71,6 +71,14 @@ export default function AtivosTable() {
   const [armazenamento, setArmazenamento] = React.useState([]);
   const [cabos, setCabos] = React.useState([]);
   const [desktops, setDesktops] = React.useState([]);
+  const [fontes, setFontes] = React.useState([]);
+  const [ram, setRAM] = React.useState([]);
+  const [monitores, setMonitores] = React.useState([]);
+  const [notebooks, setNotebooks] = React.useState([]);
+  const [nucs, setNucs] = React.useState([]);
+  const [perifericos, setPerifericos] = React.useState([]);
+  const [redes, setRedes] = React.useState([]);
+  const [telefonia, setTelefonia] = React.useState([]);
   const location = window.location.pathname;
   const backendIp = config.backend_ip;
 
@@ -107,6 +115,70 @@ export default function AtivosTable() {
         .catch(error => {
           console.error('Erro ao buscar desktops:', error);
         });
+    } else if (location === '/home/estoque/fontes') {
+      axios.get(`${backendIp}/api/list_fontes`)
+        .then(response => {
+          setFontes(response.data);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar fontes:', error);
+        });
+    } else if (location === '/home/estoque/memoria_ram') {
+      axios.get(`${backendIp}/api/list_ram`)
+        .then(response => {
+          setRAM(response.data);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar memória RAM:', error);
+        });
+    } else if (location === '/home/estoque/monitores') {
+      axios.get(`${backendIp}/api/list_monitores`)
+        .then(response => {
+          setMonitores(response.data);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar monitores:', error);
+        });
+    } else if (location === '/home/estoque/notebooks') {
+      axios.get(`${backendIp}/api/list_notebooks`)
+        .then(response => {
+          setNotebooks(response.data);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar notebooks:', error);
+        });
+    } else if (location === '/home/estoque/nucs') {
+      axios.get(`${backendIp}/api/list_nucs`)
+        .then(response => {
+          setNucs(response.data);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar nucs:', error);
+        });
+    } else if (location === '/home/estoque/perifericos') {
+      axios.get(`${backendIp}/api/list_perifericos`)
+        .then(response => {
+          setPerifericos(response.data);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar periféricos:', error);
+        });
+    } else if (location === '/home/estoque/redes') {
+      axios.get(`${backendIp}/api/list_redes`)
+        .then(response => {
+          setRedes(response.data);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar redes:', error);
+        });
+    } else if (location === '/home/estoque/telefonia') {
+      axios.get(`${backendIp}/api/list_telefonia`)
+        .then(response => {
+          setTelefonia(response.data);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar telefonia:', error);
+        });
     }
   }, [location]);
 
@@ -121,7 +193,7 @@ export default function AtivosTable() {
       state: adaptador[6],
       type: adaptador[7],
       inputConnection: adaptador[8],
-      outputConnection: adaptador[9],
+      outputConnection: adaptador[9]
     }))
     : location === '/home/estoque/armazenamento'
       ? armazenamento.map(item => ({
@@ -134,7 +206,7 @@ export default function AtivosTable() {
         state: item[6],
         type: item[7],
         capacity: item[8],
-        interface: item[9],
+        interface: item[9]
       }))
       : location === '/home/estoque/cabos'
         ? cabos.map(item => ({
@@ -147,7 +219,7 @@ export default function AtivosTable() {
           state: item[6],
           type: item[7],
           comprimento: item[8],
-          material: item[9],
+          material: item[9]
         }))
         : location === '/home/estoque/desktops'
           ? desktops.map(item => ({
@@ -161,10 +233,118 @@ export default function AtivosTable() {
             processador: item[7],
             memoria_ram: item[8],
             armazenamento: item[9],
-            fonte_alimentacao: item[10],
+            fonte_alimentacao: item[10]
           }))
-          : rows;
-
+          : location === '/home/estoque/fontes'
+            ? fontes.map(item => ({
+              id: item[0],
+              name: item[1],
+              category: item[2],
+              quantity: item[3],
+              description: item[4],
+              identification: item[5],
+              state: item[6],
+              potencia_watts: item[7],
+              modular: item[8]
+            }))
+            : location === '/home/estoque/memoria_ram'
+              ? ram.map(item => ({
+                id: item[0],
+                name: item[1],
+                category: item[2],
+                quantity: item[3],
+                description: item[4],
+                identification: item[5],
+                state: item[6],
+                capacidade: item[7],
+                tipo: item[8],
+                frequencia: item[9],
+                latencia: item[10]
+              }))
+              : location === '/home/estoque/monitores'
+                ? monitores.map(item => ({
+                  id: item[0],
+                  name: item[1],
+                  category: item[2],
+                  quantity: item[3],
+                  description: item[4],
+                  identification: item[5],
+                  state: item[6],
+                  tamanho_polegadas: item[7],
+                  resolucao: item[8],
+                  tipo_painel: item[9],
+                  taxa_atualizacao: item[10],
+                  conexoes: item[11]
+                }))
+                : location === '/home/estoque/notebooks'
+                  ? notebooks.map(item => ({
+                    id: item[0],
+                    name: item[1],
+                    category: item[2],
+                    quantity: item[3],
+                    description: item[4],
+                    identification: item[5],
+                    state: item[6],
+                    processador: item[7],
+                    memoria_ram: item[8],
+                    armazenamento: item[9],
+                    tamanho_tela: item[10],
+                    bateria: item[11]
+                  }))
+                  : location === '/home/estoque/nucs'
+                    ? nucs.map(item => ({
+                      id: item[0],
+                      name: item[1],
+                      category: item[2],
+                      quantity: item[3],
+                      description: item[4],
+                      identification: item[5],
+                      state: item[6],
+                      processador: item[7],
+                      memoria_ram: item[8],
+                      armazenamento: item[9]
+                    }))
+                    : location === '/home/estoque/perifericos'
+                      ? perifericos.map(item => ({
+                        id: item[0],
+                        name: item[1],
+                        category: item[2],
+                        quantity: item[3],
+                        description: item[4],
+                        identification: item[5],
+                        state: item[6],
+                        tipo: item[7],
+                        conexao: item[8],
+                        marca: item[9]
+                      }))
+                      : location === '/home/estoque/redes'
+                        ? redes.map(item => ({
+                          id: item[0],
+                          name: item[1],
+                          category: item[2],
+                          quantity: item[3],
+                          description: item[4],
+                          identification: item[5],
+                          state: item[6],
+                          tipo: item[7],
+                          velocidade: item[8],
+                          interface: item[9],
+                          protocolo_suportado: item[10]
+                        }))
+                        : location === '/home/estoque/telefonia'
+                          ? telefonia.map(item => ({
+                            id: item[0],
+                            name: item[1],
+                            category: item[2],
+                            quantity: item[3],
+                            description: item[4],
+                            identification: item[5],
+                            state: item[6],
+                            tipo: item[7],
+                            tecnologia: item[8],
+                            compatibilidade: item[9]
+                          }))
+                          : rows;
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '80%' }}>
@@ -270,6 +450,68 @@ export default function AtivosTable() {
                     <th style={{ width: 160, padding: '12px 6px' }}>Fonte de Alimentação</th>
                   </>
                 )}
+
+                {location === '/home/estoque/fontes' && (
+                  <>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Potência Watts</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Modular</th>
+                  </>
+                )}
+                {location === '/home/estoque/memoria_ram' && (
+                  <>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Capacidade</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Tipo</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Frequência</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Latência</th>
+                  </>
+                )}
+                {location === '/home/estoque/monitores' && (
+                  <>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Polegadas</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Resolução</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Painel</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Taxa</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Conexões</th>
+                  </>
+                )}
+                {location === '/home/estoque/notebooks' && (
+                  <>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Processador</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Memória RAM</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Armazenamento</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Tela</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Bateria</th>
+                  </>
+                )}
+                {location === '/home/estoque/nucs' && (
+                  <>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Processador</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Memória RAM</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Armazenamento</th>
+                  </>
+                )}
+                {location === '/home/estoque/perifericos' && (
+                  <>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Tipo</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Conexão</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Marca</th>
+                  </>
+                )}
+                {location === '/home/estoque/redes' && (
+                  <>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Tipo</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Velocidade</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Interface</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Protocolo Suportado</th>
+                  </>
+                )}
+                {location === '/home/estoque/telefonia' && (
+                  <>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Tipo</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Tecnologia</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Compatibilidade</th>
+                  </>
+                )}
                 <th style={{ width: 140, padding: '12px 6px' }}>Ações</th>
               </tr>
             </thead>
@@ -359,6 +601,126 @@ export default function AtivosTable() {
                       </td>
                       <td>
                         <Typography level="body-xs">{row.fonte_alimentacao}</Typography>
+                      </td>
+                    </>
+                  )}
+
+                  {location === '/home/estoque/fontes' && (
+                    <>
+                      <td>
+                        <Typography level="body-xs">{row.potencia_watts}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.modular}</Typography>
+                      </td>
+                    </>
+                  )}
+                  {location === '/home/estoque/memoria_ram' && (
+                    <>
+                      <td>
+                        <Typography level="body-xs">{row.capacidade}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.tipo}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.frequencia}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.latencia}</Typography>
+                      </td>
+                    </>
+                  )}
+                  {location === '/home/estoque/monitores' && (
+                    <>
+                      <td>
+                        <Typography level="body-xs">{row.tamanho_polegadas}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.resolucao}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.tipo_painel}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.taxa_atualizacao}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.conexoes}</Typography>
+                      </td>
+                    </>
+                  )}
+                  {location === '/home/estoque/notebooks' && (
+                    <>
+                      <td>
+                        <Typography level="body-xs">{row.processador}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.memoria_ram}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.armazenamento}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.tamanho_tela}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.bateria}</Typography>
+                      </td>
+                    </>
+                  )}
+                  {location === '/home/estoque/nucs' && (
+                    <>
+                      <td>
+                        <Typography level="body-xs">{row.processador}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.memoria_ram}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.armazenamento}</Typography>
+                      </td>
+                    </>
+                  )}
+                  {location === '/home/estoque/perifericos' && (
+                    <>
+                      <td>
+                        <Typography level="body-xs">{row.tipo}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.conexao}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.marca}</Typography>
+                      </td>
+                    </>
+                  )}
+                  {location === '/home/estoque/redes' && (
+                    <>
+                      <td>
+                        <Typography level="body-xs">{row.tipo}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.velocidade}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.interface}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.protocolo_suportado}</Typography>
+                      </td>
+                    </>
+                  )}
+                  {location === '/home/estoque/telefonia' && (
+                    <>
+                      <td>
+                        <Typography level="body-xs">{row.tipo}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.tecnologia}</Typography>
+                      </td>
+                      <td>
+                        <Typography level="body-xs">{row.compatibilidade}</Typography>
                       </td>
                     </>
                   )}
