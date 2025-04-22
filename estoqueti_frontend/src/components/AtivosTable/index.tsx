@@ -19,6 +19,8 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable'; 
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
@@ -63,7 +65,15 @@ function RowMenu() {
     </Dropdown>
   );
 }
-export default function AtivosTable() {
+
+type AtivosTableProps = {
+  estado: string;
+  local: string;
+  tipo: string;
+  quantidade: number[];
+};
+
+export default function AtivosTable({ estado, local, tipo, quantidade }: AtivosTableProps) {
   const [order, setOrder] = React.useState<Order>('desc');
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [open, setOpen] = React.useState(false);
@@ -79,6 +89,9 @@ export default function AtivosTable() {
   const [perifericos, setPerifericos] = React.useState([]);
   const [redes, setRedes] = React.useState([]);
   const [telefonia, setTelefonia] = React.useState([]);
+
+  const [todos, setTodos] = React.useState([]);
+
   const location = window.location.pathname;
   const backendIp = config.backend_ip;
 
@@ -179,37 +192,72 @@ export default function AtivosTable() {
         .catch(error => {
           console.error('Erro ao buscar telefonia:', error);
         });
+    } else if (location === '/home/estoque/todos-componentes') {
+      axios.get(`${backendIp}/api/list_all`)
+        .then(response => {
+          setTodos(response.data);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar telefonia:', error);
+        });
     }
   }, [location]);
 
-  const filteredRows = location === '/home/estoque/adaptadores'
+  type Item = {
+    id: string | number;
+    name: string;
+    category: string;
+    quantity: number;
+    description: string;
+    identification: string;
+    state: string;
+    local: string;
+    type?: string; 
+    inputConnection?: string;
+    outputConnection?: string;
+    capacity?: string;
+    interface?: string;
+    comprimento?: string;
+    material?: string;
+    processador?: string;
+    memoria_ram?: string;
+    armazenamento?: string;
+    fonte_alimentacao?: string;
+    potencia_watts?: string;
+    modular?: string;
+    capacidade?: string;
+    tipo?: string;
+    frequencia?: string;
+    latencia?: string;
+    tamanho_polegadas?: string;
+    resolucao?: string;
+    tipo_painel?: string;
+    taxa_atualizacao?: string;
+    conexoes?: string;
+    tamanho_tela?: string;
+    bateria?: string;
+    velocidade?: string;
+    protocolo_suportado?: string;
+    tecnologia?: string;
+    compatibilidade?: string;
+  };
+
+  const originalFilteredRows: Item[] = location === '/home/estoque/adaptadores'
     ? adaptadores.map(adaptador => ({
-      id: adaptador[0],
-      name: adaptador[1],
-      category: adaptador[2],
-      quantity: adaptador[3],
-      description: adaptador[4],
-      identification: adaptador[5],
-      state: adaptador[6],
-      type: adaptador[7],
-      inputConnection: adaptador[8],
-      outputConnection: adaptador[9]
-    }))
+        id: adaptador[0],
+        name: adaptador[1],
+        category: adaptador[2],
+        quantity: adaptador[3],
+        description: adaptador[4],
+        identification: adaptador[5],
+        state: adaptador[6],
+        local: adaptador[7],
+        type: adaptador[8],
+        inputConnection: adaptador[9],
+        outputConnection: adaptador[10],
+      }))
     : location === '/home/estoque/armazenamento'
       ? armazenamento.map(item => ({
-        id: item[0],
-        name: item[1],
-        category: item[2],
-        quantity: item[3],
-        description: item[4],
-        identification: item[5],
-        state: item[6],
-        type: item[7],
-        capacity: item[8],
-        interface: item[9]
-      }))
-      : location === '/home/estoque/cabos'
-        ? cabos.map(item => ({
           id: item[0],
           name: item[1],
           category: item[2],
@@ -217,10 +265,25 @@ export default function AtivosTable() {
           description: item[4],
           identification: item[5],
           state: item[6],
-          type: item[7],
-          comprimento: item[8],
-          material: item[9]
+          local: item[7],
+          type: item[8],
+          capacity: item[9],
+          interface: item[10],
         }))
+      : location === '/home/estoque/cabos'
+        ? cabos.map(item => ({
+            id: item[0],
+            name: item[1],
+            category: item[2],
+            quantity: item[3],
+            description: item[4],
+            identification: item[5],
+            state: item[6],
+            local: item[7],
+            type: item[8],
+            comprimento: item[9],
+            material: item[10],
+          }))
         : location === '/home/estoque/desktops'
           ? desktops.map(item => ({
             id: item[0],
@@ -230,10 +293,11 @@ export default function AtivosTable() {
             description: item[4],
             identification: item[5],
             state: item[6],
-            processador: item[7],
-            memoria_ram: item[8],
-            armazenamento: item[9],
-            fonte_alimentacao: item[10]
+            local: item[7],
+            processador: item[8],
+            memoria_ram: item[9],
+            armazenamento: item[10],
+            fonte_alimentacao: item[11]
           }))
           : location === '/home/estoque/fontes'
             ? fontes.map(item => ({
@@ -244,8 +308,9 @@ export default function AtivosTable() {
               description: item[4],
               identification: item[5],
               state: item[6],
-              potencia_watts: item[7],
-              modular: item[8]
+              local: item[7],
+              potencia_watts: item[8],
+              modular: item[9]
             }))
             : location === '/home/estoque/memoria_ram'
               ? ram.map(item => ({
@@ -256,10 +321,11 @@ export default function AtivosTable() {
                 description: item[4],
                 identification: item[5],
                 state: item[6],
-                capacidade: item[7],
-                tipo: item[8],
-                frequencia: item[9],
-                latencia: item[10]
+                local: item[7],
+                capacidade: item[8],
+                tipo: item[9],
+                frequencia: item[10],
+                latencia: item[11]
               }))
               : location === '/home/estoque/monitores'
                 ? monitores.map(item => ({
@@ -270,11 +336,12 @@ export default function AtivosTable() {
                   description: item[4],
                   identification: item[5],
                   state: item[6],
-                  tamanho_polegadas: item[7],
-                  resolucao: item[8],
-                  tipo_painel: item[9],
-                  taxa_atualizacao: item[10],
-                  conexoes: item[11]
+                  local: item[7],
+                  tamanho_polegadas: item[8],
+                  resolucao: item[9],
+                  tipo_painel: item[10],
+                  taxa_atualizacao: item[11],
+                  conexoes: item[12]
                 }))
                 : location === '/home/estoque/notebooks'
                   ? notebooks.map(item => ({
@@ -285,11 +352,12 @@ export default function AtivosTable() {
                     description: item[4],
                     identification: item[5],
                     state: item[6],
-                    processador: item[7],
-                    memoria_ram: item[8],
-                    armazenamento: item[9],
-                    tamanho_tela: item[10],
-                    bateria: item[11]
+                    local: item[7],
+                    processador: item[8],
+                    memoria_ram: item[9],
+                    armazenamento: item[10],
+                    tamanho_tela: item[11],
+                    bateria: item[12]
                   }))
                   : location === '/home/estoque/nucs'
                     ? nucs.map(item => ({
@@ -300,9 +368,10 @@ export default function AtivosTable() {
                       description: item[4],
                       identification: item[5],
                       state: item[6],
-                      processador: item[7],
-                      memoria_ram: item[8],
-                      armazenamento: item[9]
+                      local: item[7],
+                      processador: item[8],
+                      memoria_ram: item[9],
+                      armazenamento: item[10]
                     }))
                     : location === '/home/estoque/perifericos'
                       ? perifericos.map(item => ({
@@ -313,9 +382,10 @@ export default function AtivosTable() {
                         description: item[4],
                         identification: item[5],
                         state: item[6],
-                        tipo: item[7],
-                        conexao: item[8],
-                        marca: item[9]
+                        local: item[7],
+                        tipo: item[8],
+                        conexao: item[9],
+                        marca: item[10]
                       }))
                       : location === '/home/estoque/redes'
                         ? redes.map(item => ({
@@ -326,10 +396,11 @@ export default function AtivosTable() {
                           description: item[4],
                           identification: item[5],
                           state: item[6],
-                          tipo: item[7],
-                          velocidade: item[8],
-                          interface: item[9],
-                          protocolo_suportado: item[10]
+                          local: item[7],
+                          tipo: item[8],
+                          velocidade: item[9],
+                          interface: item[10],
+                          protocolo_suportado: item[11]
                         }))
                         : location === '/home/estoque/telefonia'
                           ? telefonia.map(item => ({
@@ -340,11 +411,101 @@ export default function AtivosTable() {
                             description: item[4],
                             identification: item[5],
                             state: item[6],
-                            tipo: item[7],
-                            tecnologia: item[8],
-                            compatibilidade: item[9]
+                            local: item[7],
+                            tipo: item[8],
+                            tecnologia: item[9],
+                            compatibilidade: item[10]
                           }))
-                          : rows;
+                          : location === '/home/estoque/todos-componentes'
+                          ? todos.map(item => ({
+                            id: item[0],
+                            name: item[1],
+                            category: item[2],
+                            quantity: item[3],
+                            description: item[4],
+                            identification: item[5],
+                            state: item[6],
+                            local: item[7]
+                          }))
+                          : []; 
+
+  const filteredRows = React.useMemo(() => {
+    return [...originalFilteredRows].filter((row) => {
+        return (
+            (!estado || row.state === estado) &&
+            (!local || row.local === local) &&
+            row.quantity >= quantidade[0] &&
+            row.quantity <= quantidade[1]
+        );
+    });
+}, [originalFilteredRows, estado, local, quantidade]); 
+
+function generateRowPDF(row) {
+  const doc = new jsPDF();
+  doc.setFontSize(14);
+  doc.text(`Relatório do Ativo: ${row.name}`, 10, 10);
+
+  const tableColumn = ["Campo", "Valor"];
+  const translations = {
+    name: "Nome",
+    category: "Categoria",
+    quantity: "Quantidade",
+    description: "Descrição",
+    identification: "Identificação",
+    state: "Estado",
+    local: "Local",
+    type: "Tipo",
+    inputConnection: "Conexão de Entrada",
+    outputConnection: "Conexão de Saída",
+    capacity: "Capacidade",
+    interface: "Interface",
+    comprimento: "Comprimento",
+    material: "Material",
+    processador: "Processador",
+    memoria_ram: "Memória RAM",
+    armazenamento: "Armazenamento",
+    fonte_alimentacao: "Fonte de Alimentação",
+    potencia_watts: "Potência (Watts)",
+    modular: "Modular",
+    capacidade: "Capacidade",
+    tipo: "Tipo",
+    frequencia: "Frequência",
+    latencia: "Latência",
+    tamanho_polegadas: "Tamanho (Polegadas)",
+    resolucao: "Resolução",
+    tipo_painel: "Tipo de Painel",
+    taxa_atualizacao: "Taxa de Atualização",
+    conexoes: "Conexões",
+    tamanho_tela: "Tamanho da Tela",
+    bateria: "Bateria",
+    velocidade: "Velocidade",
+    protocolo_suportado: "Protocolo Suportado",
+    tecnologia: "Tecnologia",
+    compatibilidade: "Compatibilidade",
+  };
+
+  const tableRows = Object.entries(row)
+    .filter(([key]) => key !== "id") 
+    .map(([key, value]) => [translations[key] || key, value || "N/A"]);
+
+  autoTable(doc, {
+    head: [tableColumn],
+    body: tableRows,
+    startY: 20,
+    styles: {
+      fontSize: 10,
+      cellPadding: 3,
+    },
+    headStyles: {
+      fillColor: [22, 160, 133],
+      textColor: [255, 255, 255],
+      fontSize: 12,
+    },
+  });
+
+  doc.save(`${row.name || "ativo"}.pdf`);
+}
+
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '80%' }}>
@@ -356,6 +517,7 @@ export default function AtivosTable() {
             flexShrink: 1,
             overflow: 'auto',
             minHeight: 0,
+            maxHeight: '95vh',
             flex: '1 1 auto',
           }}
         >
@@ -421,6 +583,7 @@ export default function AtivosTable() {
                 <th style={{ width: 100, padding: '12px 6px' }}>Quantidade</th>
                 <th style={{ width: 120, padding: '12px 6px' }}>Descrição</th>
                 <th style={{ width: 100, padding: '12px 6px' }}>Estado</th>
+                <th style={{ width: 100, padding: '12px 6px' }}>Local</th>
                 {location === '/home/estoque/armazenamento' && (
                   <>
                     <th style={{ width: 100, padding: '12px 6px' }}>Tipo</th>
@@ -460,17 +623,17 @@ export default function AtivosTable() {
                 {location === '/home/estoque/memoria_ram' && (
                   <>
                     <th style={{ width: 100, padding: '12px 6px' }}>Capacidade</th>
-                    <th style={{ width: 120, padding: '12px 6px' }}>Tipo</th>
-                    <th style={{ width: 120, padding: '12px 6px' }}>Frequência</th>
-                    <th style={{ width: 120, padding: '12px 6px' }}>Latência</th>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Tipo</th>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Frequência</th>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Latência</th>
                   </>
                 )}
                 {location === '/home/estoque/monitores' && (
                   <>
                     <th style={{ width: 100, padding: '12px 6px' }}>Polegadas</th>
                     <th style={{ width: 120, padding: '12px 6px' }}>Resolução</th>
-                    <th style={{ width: 120, padding: '12px 6px' }}>Painel</th>
-                    <th style={{ width: 120, padding: '12px 6px' }}>Taxa</th>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Painel</th>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Taxa</th>
                     <th style={{ width: 120, padding: '12px 6px' }}>Conexões</th>
                   </>
                 )}
@@ -479,8 +642,8 @@ export default function AtivosTable() {
                     <th style={{ width: 100, padding: '12px 6px' }}>Processador</th>
                     <th style={{ width: 120, padding: '12px 6px' }}>Memória RAM</th>
                     <th style={{ width: 120, padding: '12px 6px' }}>Armazenamento</th>
-                    <th style={{ width: 120, padding: '12px 6px' }}>Tela</th>
-                    <th style={{ width: 120, padding: '12px 6px' }}>Bateria</th>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Tela</th>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Bateria</th>
                   </>
                 )}
                 {location === '/home/estoque/nucs' && (
@@ -548,6 +711,9 @@ export default function AtivosTable() {
                   </td>
                   <td>
                     <Typography level="body-xs">{row.state}</Typography>
+                  </td>
+                  <td>
+                    <Typography level="body-xs">{row.local}</Typography>
                   </td>
                   {location === '/home/estoque/armazenamento' && (
                     <>
@@ -726,7 +892,11 @@ export default function AtivosTable() {
                   )}
                   <td>
                     <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-                      <Link level="body-xs" component="button">
+                      <Link
+                        level="body-xs"
+                        component="button"
+                        onClick={() => generateRowPDF(row)} 
+                      >
                         Download
                       </Link>
                       <RowMenu />

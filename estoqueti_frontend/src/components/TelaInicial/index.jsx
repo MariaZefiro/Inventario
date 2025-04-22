@@ -40,9 +40,15 @@ export default function TelaInicial() {
                         Gerencie os ativos de TI de forma eficiente e prática.
                     </Typography>
                     <Button
-                        variant="solid"
-                        onClick={() => navigate('/home/estoque')}
-                        sx={{ mb: 1, width: '100%', backgroundColor: '#009373' }}
+                        onClick={() => navigate('/home/estoque/todos-componentes')}
+                        sx={{
+                            mb: 1,
+                            width: '100%',
+                            backgroundColor: '#009373',
+                            '&:hover': {
+                                backgroundColor: '#007a5e', 
+                            },
+                        }}
                     >
                         Componentes
                     </Button>

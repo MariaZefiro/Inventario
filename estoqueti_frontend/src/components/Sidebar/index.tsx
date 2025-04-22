@@ -72,12 +72,12 @@ export default function Sidebar() {
   
   const menuItems = [
     { label: 'Home', icon: <HomeRoundedIcon />, route: '/home' }, 
-    { label: 'Dashboard', icon: <DashboardRoundedIcon /> },
+    { label: 'Dashboard', icon: <DashboardRoundedIcon />,  route: '/home/dashboard' },
     { label: 'Entradas e Saídas', icon: <ShoppingCartRoundedIcon />, route: '/home/entradas-saidas' },
     {
       label: 'Estoque',
       icon: <AssignmentRoundedIcon />,
-      route: '/home/estoque',
+      route: '/home/estoque/todos-componentes',
       subItems: [
         { label: 'Todos componentes', route: '/home/estoque/todos-componentes' },
         { label: 'Adaptadores', route: '/home/estoque/adaptadores' },
