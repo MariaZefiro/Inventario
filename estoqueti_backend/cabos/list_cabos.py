@@ -21,6 +21,7 @@ def list_cabos():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 cb.tipo,
                 cb.comprimento,
                 cb.material

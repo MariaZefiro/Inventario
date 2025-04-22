@@ -21,6 +21,7 @@ def list_notebooks():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 nb.processador,
                 nb.memoria_ram,
                 nb.armazenamento,

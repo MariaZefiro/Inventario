@@ -21,6 +21,7 @@ def list_fontes():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 ft.potencia_watts,
                 ft.modular
             FROM ativos a

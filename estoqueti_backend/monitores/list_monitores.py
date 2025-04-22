@@ -21,6 +21,7 @@ def list_monitores():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 mn.tamanho_polegadas,
                 mn.resolucao,
                 mn.tipo_painel,

@@ -21,6 +21,7 @@ def list_perifericos():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 pf.tipo,
                 pf.conexao,
                 pf.marca

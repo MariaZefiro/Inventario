@@ -21,6 +21,7 @@ def list_armazenamento():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 am.tipo,
                 am.capacidade,
                 am.interface

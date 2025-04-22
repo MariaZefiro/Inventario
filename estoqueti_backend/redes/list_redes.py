@@ -21,6 +21,7 @@ def list_redes():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 rd.tipo,
                 rd.velocidade,
                 rd.interface,

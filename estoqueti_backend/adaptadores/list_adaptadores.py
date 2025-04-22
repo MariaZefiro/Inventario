@@ -21,6 +21,7 @@ def list_adaptadores():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 ad.tipo,
                 ad.conexao_entrada,
                 ad.conexao_saida

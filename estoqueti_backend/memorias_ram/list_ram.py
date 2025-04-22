@@ -21,6 +21,7 @@ def list_ram():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 mr.capacidade,
                 mr.tipo,
                 mr.frequencia,

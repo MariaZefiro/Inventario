@@ -21,6 +21,7 @@ def list_desktops():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 dk.processador,
                 dk.memoria_ram,
                 dk.armazenamento,

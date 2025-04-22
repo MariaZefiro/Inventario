@@ -9,6 +9,9 @@ ALLOWED_ORIGINS = ["http://localhost:3000", "http://10.1.254.74:3000"]
 #LOGIN
 from login import login_bp
 
+#ATIVOS
+from ativos.list_ativos import list_all_bp
+
 #ADAPTADORES
 from adaptadores.list_adaptadores import list_adaptadores_bp
 
@@ -59,6 +62,6 @@ blueprints = [
     list_nucs_bp,
     list_perifericos_bp,
     list_redes_bp,
-    list_telefonia_bp
-    
+    list_telefonia_bp,
+    list_all_bp
 ]

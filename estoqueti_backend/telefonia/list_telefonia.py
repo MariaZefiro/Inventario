@@ -21,6 +21,7 @@ def list_telefonia():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 tf.tipo,
                 tf.tecnologia,
                 tf.compatibilidade

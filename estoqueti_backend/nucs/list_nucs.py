@@ -21,6 +21,7 @@ def list_nucs():
                 a.descricao,
                 a.identificacao,
                 a.estado,
+                a.local,
                 nc.processador,
                 nc.memoria_ram,
                 nc.armazenamento
