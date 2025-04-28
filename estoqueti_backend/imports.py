@@ -11,6 +11,8 @@ from login import login_bp
 
 #ATIVOS
 from ativos.list_ativos import list_all_bp
+from ativos.list_categorias import list_categorias_bp
+from ativos.cadastrar_ativo import cadastrar_ativo_bp
 
 #ADAPTADORES
 from adaptadores.list_adaptadores import list_adaptadores_bp
@@ -63,5 +65,7 @@ blueprints = [
     list_perifericos_bp,
     list_redes_bp,
     list_telefonia_bp,
-    list_all_bp
+    list_all_bp,
+    list_categorias_bp,
+    cadastrar_ativo_bp
 ]

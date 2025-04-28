@@ -23,6 +23,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Logo from './Logo';
 import { useNavigate } from 'react-router-dom';
 import ColorSchemeToggle from '../ColorSchemeToggle/ColorSchemeToggle.tsx';
+import InventoryIcon from '@mui/icons-material/Inventory';
 import { closeSidebar } from '../utils';
 import config from "../../config";
 import CryptoJS from 'crypto-js';
@@ -94,13 +95,14 @@ export default function Sidebar() {
         { label: 'Telefonia', route: '/home/estoque/telefonia' },
       ],
     },
+    { label: 'Gerenciar', icon: <InventoryIcon />, route: '/home/gerenciar' },
   ];
   
   const [filteredItems, setFilteredItems] = useState(menuItems);
   
   useEffect(() => {
     const cachedData = getUserData();
-    setFilteredItems(menuItems); // Initialize with all menu items
+    setFilteredItems(menuItems); 
   }, []);
 
   const handleLogout = () => {

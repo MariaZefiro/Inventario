@@ -16,6 +16,7 @@ import Estoque from '../Estoque/index.jsx';
 import Header from '../Header';
 import TelaInicial from '../TelaInicial/index.jsx';
 import Dashboard from '../Dashboard/index.jsx';
+import Gerenciar from '../Gerenciar/index.jsx';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -94,6 +95,7 @@ export default function Home() {
             <Route path="entradas-saidas" element={<EntradasSaidas />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="estoque/*" element={<Estoque />} />
+            <Route path="gerenciar" element={<Gerenciar />} />
             <Route path="/" element={<TelaInicial />} /> 
           </Routes>
         </Box>
