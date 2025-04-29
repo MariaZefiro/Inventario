@@ -7,7 +7,10 @@ import Typography from '@mui/joy/Typography';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
 import Autocomplete from '@mui/joy/Autocomplete';
+import Textarea from '@mui/joy/Textarea';
 import config from '../../config';
+import BasicAlert from '../Alert';
+import CryptoJS from 'crypto-js';
 
 export default function Gerenciar() {
     const [formData, setFormData] = useState({
@@ -23,9 +26,14 @@ export default function Gerenciar() {
 
     const [categories, setCategories] = useState([]);
     const [specificFields, setSpecificFields] = useState([]);
+    const [alert, setAlert] = useState({ severity: '', message: '' });
+    const [nome, setNome] = useState('');
+    const [usuario, setUsuario] = useState('');
     const backendIp = config.backend_ip;
+    const secretKey = config.secretKey;
 
     useEffect(() => {
+        getUserData();
         const fetchCategories = async () => {
             try {
                 const response = await fetch(`${backendIp}/api/categorias`);
@@ -47,8 +55,29 @@ export default function Gerenciar() {
     const handleSpecificFieldChange = (field, value) => {
         setFormData((prev) => ({
             ...prev,
-            specificFields: { ...prev.specificFields, [field]: value },
+            specificFields: {
+                ...prev.specificFields,
+                [field]: field === 'Modular' ? (value === 'Sim' ? 1 : 0) : value,
+            },
         }));
+    };
+
+    const getUserData = () => {
+        const cachedData = localStorage.getItem('userData');
+        if (!cachedData) return null; // Retorna null se não houver dados no localStorage
+
+        try {
+            // Descriptografar o dado
+            const bytes = CryptoJS.AES.decrypt(cachedData, secretKey);
+            const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+            const nomeCompleto = decryptedData.nome_completo.split(' ');
+            const nomeFormatado = `${nomeCompleto[0]} ${nomeCompleto[nomeCompleto.length - 1]}`;
+            setNome(nomeFormatado);
+            setUsuario(decryptedData.usuario);
+        } catch (error) {
+            console.error('Erro ao descriptografar os dados:', error);
+            return null; // Retorna null se ocorrer um erro na descriptografia
+        }
     };
 
     const handleCategoryChange = (categoryName) => {
@@ -78,7 +107,7 @@ export default function Gerenciar() {
                 setSpecificFields(['Tamanho Polegadas', 'Resolução', 'Tipo Painel', 'Taxa Atualização', 'Conexões']);
                 break;
             case 'Notebook':
-                setSpecificFields(['Processador', 'Memória RAM', 'Armazenamento', 'Tamanho_Tela', 'Bateria']);
+                setSpecificFields(['Processador', 'Memória RAM', 'Armazenamento', 'Tamanho Tela', 'Bateria']);
                 break;
             case 'NUC':
                 setSpecificFields(['Processador', 'Memória RAM', 'Armazenamento']);
@@ -102,8 +131,8 @@ export default function Gerenciar() {
             const selectedCategory = categories.find((cat) => cat.nome === formData.category);
             const category_id = selectedCategory ? selectedCategory.id : null;
 
-            if (!category_id) {
-                alert('Categoria inválida. Por favor, selecione uma categoria válida.');
+            if (!category_id || !formData.name || !formData.quantity || !formData.state || !formData.local) {
+                setAlert({ severity: 'warning', message: 'Por favor, preencha todos os campos obrigatórios*.' });
                 return;
             }
 
@@ -114,7 +143,9 @@ export default function Gerenciar() {
                 description: formData.description,
                 state: formData.state,
                 local: formData.local,
-                specificFields: formData.specificFields, 
+                specificFields: formData.specificFields,
+                user: usuario, 
+                nome: nome,
             };
 
             const response = await fetch(`${backendIp}/api/cadastrar_ativo`, {
@@ -123,8 +154,8 @@ export default function Gerenciar() {
                 body: JSON.stringify(payload),
             });
 
-            if (!response.ok) throw new Error('Erro ao adicionar componente');
-            alert('Componente adicionado com sucesso!');
+            if (!response.ok) throw new Error('Erro ao adicionar ativo');
+            setAlert({ severity: 'success', message: 'Ativo adicionado com sucesso!' });
             setFormData({
                 name: '',
                 category: '',
@@ -137,7 +168,7 @@ export default function Gerenciar() {
             });
         } catch (error) {
             console.error('Erro ao adicionar componente:', error);
-            alert('Erro ao adicionar componente.');
+            setAlert({ severity: 'danger', message: 'Erro ao adicionar componente.' });
         }
     };
 
@@ -148,112 +179,190 @@ export default function Gerenciar() {
                 <Typography level="h2" component="h1">
                     Gerenciar Ativos
                 </Typography>
+                {alert.message && (
+                    <Box sx={{ mb: 2 }}>
+                        <BasicAlert
+                            severity={alert.severity}
+                            message={alert.message}
+                            onClose={() => setAlert({ severity: '', message: '' })}
+                        />
+                    </Box>
+                )}
                 <Box
                     sx={{
                         backgroundColor: 'background.surface',
                         borderRadius: '12px',
-                        boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.15)', 
-                        width: '80%',
-                        margin: '0 auto', 
-                        padding: 4,
+                        boxShadow: '0px 6px 15px rgba(0, 0, 0, 0.15)',
+                        width: '100%',
+                        margin: '0 auto',
+                        padding: '32px 100px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
                     }}
                 >
-                    <Typography
-                        level="h4"
-                        component="h2"
-                        sx={{
-                            textAlign: 'center', 
-                            marginBottom: 3, 
-                            fontWeight: 'bold',
-                        }}
-                    >
-                        Cadastrar Produto
-                    </Typography>
                     <Box
                         sx={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
+                            gridTemplateColumns: 'repeat(2, 1fr)',
                             gap: 3,
+                            width: '100%',
                         }}
                     >
-                        <Input
-                            placeholder="Nome"
-                            value={formData.name}
-                            onChange={(e) => handleInputChange('name', e.target.value)}
-                            sx={{ borderRadius: '8px', maxWidth: '500px' }}
-                        />
-                        <Autocomplete
-                            placeholder="Categoria"
-                            options={categories.map((cat) => cat.nome)}
-                            value={formData.category}
-                            onChange={(event, newValue) => handleCategoryChange(newValue || '')}
-                            getOptionLabel={(option) => option || ''}
-                            renderInput={(params) => (
-                                <Input {...params} placeholder="Categoria" sx={{ borderRadius: '8px', maxWidth: '500px' }} />
-                            )}
-                            sx={{ maxWidth: '500px' }}
-                        />
-                        <Input
-                            placeholder="Quantidade"
-                            type="number"
-                            value={formData.quantity}
-                            onChange={(e) => handleInputChange('quantity', e.target.value)}
-                            sx={{ borderRadius: '8px', maxWidth: '500px' }}
-                        />
-                        <Input
-                            placeholder="Descrição"
-                            value={formData.description}
-                            onChange={(e) => handleInputChange('description', e.target.value)}
-                            sx={{ borderRadius: '8px', maxWidth: '500px' }}
-                        />
-                        <Autocomplete
-                            placeholder="Estado"
-                            options={['Novo', 'Usado', 'Defeituoso']}
-                            value={formData.state}
-                            onChange={(event, newValue) => handleInputChange('state', newValue || '')}
-                            renderInput={(params) => (
-                                <Input {...params} placeholder="Estado" sx={{ borderRadius: '8px', maxWidth: '500px' }} />
-                            )}
-                            sx={{ maxWidth: '500px' }}
-                        />
-                        <Autocomplete
-                            placeholder="Local"
-                            options={[
-                                'Lab TI', 'TI', 'CGR', 'Engenharia', 'Homologação', 'Aferição', 'Estoque',
-                            ]}
-                            value={formData.local}
-                            onChange={(event, newValue) => handleInputChange('local', newValue || '')}
-                            renderInput={(params) => (
-                                <Input {...params} placeholder="Local" sx={{ borderRadius: '8px', maxWidth: '500px' }} />
-                            )}
-                            sx={{ maxWidth: '500px' }}
-                        />
-                        {specificFields.map((field) => (
-                            <Input
-                                key={field}
-                                placeholder={field}
-                                value={formData.specificFields[field] || ''}
-                                onChange={(e) => handleSpecificFieldChange(field, e.target.value)}
-                                sx={{ borderRadius: '8px', maxWidth: '500px' }}
+                        <Box>
+                            <Typography level="body1" sx={{ marginBottom: 1 }}>
+                                Nome *
+                            </Typography>
+                            <Textarea
+                                placeholder="Digite o nome"
+                                value={formData.name}
+                                minRows={3}
+                                onChange={(e) => handleInputChange('name', e.target.value)}
+                                sx={{ borderRadius: '8px', width: '100%' }}
                             />
+                        </Box>
+                        <Box>
+                            <Typography level="body1" sx={{ marginBottom: 1 }}>
+                                Descrição *
+                            </Typography>
+                            <Textarea
+                                placeholder="Digite a descrição"
+                                value={formData.description}
+                                minRows={3}
+                                onChange={(e) => handleInputChange('description', e.target.value)}
+                                sx={{ borderRadius: '8px', width: '100%' }}
+                            />
+                        </Box>
+                        <Box>
+                            <Typography level="body1" sx={{ marginBottom: 1 }}>
+                                Categoria *
+                            </Typography>
+                            <Autocomplete
+                                placeholder="Selecione a categoria"
+                                options={categories.map((cat) => cat.nome)}
+                                value={formData.category}
+                                onChange={(event, newValue) => handleCategoryChange(newValue || '')}
+                                getOptionLabel={(option) => option || ''}
+                                renderInput={(params) => (
+                                    <Input {...params} placeholder="Selecione a categoria" sx={{ borderRadius: '8px', width: '100%' }} />
+                                )}
+                                sx={{ width: '100%' }}
+                            />
+                        </Box>
+                        <Box>
+                            <Typography level="body1" sx={{ marginBottom: 1 }}>
+                                Quantidade *
+                            </Typography>
+                            <Input
+                                placeholder="Digite a quantidade"
+                                type="number"
+                                value={formData.quantity}
+                                onChange={(e) => handleInputChange('quantity', e.target.value)}
+                                sx={{ borderRadius: '8px', width: '100%' }}
+                            />
+                        </Box>
+                        <Box>
+                            <Typography level="body1" sx={{ marginBottom: 1 }}>
+                                Estado *
+                            </Typography>
+                            <Autocomplete
+                                placeholder="Selecione o estado"
+                                options={['Novo', 'Usado', 'Defeituoso']}
+                                value={formData.state}
+                                onChange={(event, newValue) => handleInputChange('state', newValue || '')}
+                                renderInput={(params) => (
+                                    <Input {...params} placeholder="Selecione o estado" sx={{ borderRadius: '8px', width: '100%' }} />
+                                )}
+                                sx={{ width: '100%' }}
+                            />
+                        </Box>
+                        <Box>
+                            <Typography level="body1" sx={{ marginBottom: 1 }}>
+                                Local *
+                            </Typography>
+                            <Autocomplete
+                                placeholder="Selecione o local"
+                                options={[
+                                    'Lab TI', 'TI', 'CGR', 'Engenharia', 'Homologação', 'Aferição', 'Estoque',
+                                ]}
+                                value={formData.local}
+                                onChange={(event, newValue) => handleInputChange('local', newValue || '')}
+                                renderInput={(params) => (
+                                    <Input {...params} placeholder="Selecione o local" sx={{ borderRadius: '8px', width: '100%' }} />
+                                )}
+                                sx={{ width: '100%' }}
+                            />
+                        </Box>
+                        {specificFields.map((field) => (
+                            <Box key={field}>
+                                <Typography level="body1" sx={{ marginBottom: 1 }}>
+                                    {field}
+                                </Typography>
+                                <Input
+                                    placeholder={`Digite aqui`}
+                                    value={
+                                        field === 'Modular'
+                                            ? formData.specificFields[field] === 1
+                                                ? 'Sim'
+                                                : formData.specificFields[field] === 0
+                                                    ? 'Não'
+                                                    : ''
+                                            : formData.specificFields[field] || ''
+                                    }
+                                    onChange={(e) =>
+                                        handleSpecificFieldChange(
+                                            field,
+                                            field === 'Modular' ? e.target.value : e.target.value
+                                        )
+                                    }
+                                    sx={{ borderRadius: '8px', width: '100%' }}
+                                />
+                            </Box>
                         ))}
                     </Box>
-                    <Button
-                        onClick={handleSubmit}
-                        color="primary"
+                    <Box
                         sx={{
-                            marginTop: 3, 
-                            paddingX: 5,
-                            paddingY: 1.5, 
-                            borderRadius: '8px', 
-                            fontWeight: 'bold',
-                            display: 'block',
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
+                            display: 'flex',
+                            gap: 2,
+                            marginTop: 3,
                         }}
                     >
-                        Adicionar
-                    </Button>
+                        <Button
+                            onClick={handleSubmit}
+                            color="primary"
+                            sx={{
+                                paddingX: 5,
+                                paddingY: 1.5,
+                                borderRadius: '8px',
+                                fontWeight: 'bold',
+                            }}
+                        >
+                            Adicionar
+                        </Button>
+                        <Button
+                            onClick={() =>
+                                setFormData({
+                                    name: '',
+                                    category: '',
+                                    quantity: '',
+                                    description: '',
+                                    state: '',
+                                    local: '',
+                                    type: '',
+                                    specificFields: {},
+                                })
+                            }
+                            color="neutral"
+                            sx={{
+                                paddingX: 5,
+                                paddingY: 1.5,
+                                borderRadius: '8px',
+                                fontWeight: 'bold',
+                            }}
+                        >
+                            Limpar
+                        </Button>
+                    </Box>
                 </Box>
             </Box>
         </CssVarsProvider>

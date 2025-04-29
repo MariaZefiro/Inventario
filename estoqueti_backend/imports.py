@@ -50,6 +50,9 @@ from redes.list_redes import list_redes_bp
 #TELEFONIA
 from telefonia.list_telefonia import list_telefonia_bp
 
+#LOGS
+from log import list_logs_bp
+
 # Lista dos blueprints para registro
 blueprints = [
     login_bp,
@@ -67,5 +70,6 @@ blueprints = [
     list_telefonia_bp,
     list_all_bp,
     list_categorias_bp,
-    cadastrar_ativo_bp
+    cadastrar_ativo_bp,
+    list_logs_bp
 ]

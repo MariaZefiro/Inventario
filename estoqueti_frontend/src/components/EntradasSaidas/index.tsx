@@ -22,6 +22,129 @@ export default function EntradasSaidas() {
         }
     }, [navigate]);
 
+    const rows = [
+        {
+            id: '#1234',
+            date: '20 ed fev de 2025',
+            status: 'Recusado',
+            customer: {
+                initial: 'G',
+                name: 'Gabriel Reis',
+                email: 'gabriel@email.com',
+            },
+        },
+        {
+            id: '#1234',
+            date: '20 ed fev de 2025',
+            status: 'Concluído',
+            customer: {
+                initial: 'M',
+                name: 'Maria Zefiro',
+                email: 'maria@email.com',
+            },
+        },
+        {
+            id: '#1234',
+            date: '20 ed fev de 2025',
+            status: 'Recusado',
+            customer: {
+                initial: 'G',
+                name: 'Gabriel Simonassi',
+                email: 'gabriel@email.com',
+            },
+        },
+        {
+            id: '#1234',
+            date: '20 ed fev de 2025',
+            status: 'Recusado',
+            customer: {
+                initial: 'M',
+                name: 'Maria Zefiro',
+                email: 'maria@email.com',
+            },
+        },
+        {
+            id: '#1230',
+            date: '20 ed fev de 2025',
+            status: 'Cancelado',
+            customer: {
+                initial: 'R',
+                name: 'Ricardo Robson',
+                email: 'ricardo@email.com',
+            },
+        },
+        {
+            id: '#1229',
+            date: '20 ed fev de 2025',
+            status: 'Cancelado',
+            customer: {
+                initial: 'R',
+                name: 'Ricardo Robson',
+                email: 'ricardo@email.com',
+            },
+        },
+        {
+            id: '#1234',
+            date: '20 ed fev de 2025',
+            status: 'Recusado',
+            customer: {
+                initial: 'G',
+                name: 'Gabriel Reis',
+                email: 'gabriel@email.com',
+            },
+        },
+        {
+            id: '#1234',
+            date: '20 ed fev de 2025',
+            status: 'Concluído',
+            customer: {
+                initial: 'M',
+                name: 'Maria Zefiro',
+                email: 'maria@email.com',
+            },
+        },
+        {
+            id: '#1234',
+            date: '20 ed fev de 2025',
+            status: 'Recusado',
+            customer: {
+                initial: 'G',
+                name: 'Gabriel Simonassi',
+                email: 'gabriel@email.com',
+            },
+        },
+        {
+            id: '#1234',
+            date: '20 ed fev de 2025',
+            status: 'Recusado',
+            customer: {
+                initial: 'M',
+                name: 'Maria Zefiro',
+                email: 'maria@email.com',
+            },
+        },
+        {
+            id: '#1230',
+            date: '20 ed fev de 2025',
+            status: 'Cancelado',
+            customer: {
+                initial: 'R',
+                name: 'Ricardo Robson',
+                email: 'ricardo@email.com',
+            },
+        },
+        {
+            id: '#1229',
+            date: '20 ed fev de 2025',
+            status: 'Cancelado',
+            customer: {
+                initial: 'R',
+                name: 'Ricardo Robson',
+                email: 'ricardo@email.com',
+            },
+        },
+    ];
+
     return (
         <CssVarsProvider disableTransitionOnChange>
             <CssBaseline />
@@ -47,7 +170,7 @@ export default function EntradasSaidas() {
                     Download PDF
                 </Button>
             </Box>
-            <OrderTable />
+            <OrderTable data={rows} type="orders" />
             <OrderList />
         </CssVarsProvider >
     );

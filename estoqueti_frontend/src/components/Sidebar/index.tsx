@@ -20,6 +20,7 @@ import SupportRoundedIcon from '@mui/icons-material/SupportRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import PreviewRoundedIcon from '@mui/icons-material/PreviewRounded';
 import Logo from './Logo';
 import { useNavigate } from 'react-router-dom';
 import ColorSchemeToggle from '../ColorSchemeToggle/ColorSchemeToggle.tsx';
@@ -74,6 +75,7 @@ export default function Sidebar() {
   const menuItems = [
     { label: 'Home', icon: <HomeRoundedIcon />, route: '/home' }, 
     { label: 'Dashboard', icon: <DashboardRoundedIcon />,  route: '/home/dashboard' },
+    { label: 'Atividade', icon: <PreviewRoundedIcon />,  route: '/home/atividade' },
     { label: 'Entradas e Saídas', icon: <ShoppingCartRoundedIcon />, route: '/home/entradas-saidas' },
     {
       label: 'Estoque',

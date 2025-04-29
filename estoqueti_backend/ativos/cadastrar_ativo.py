@@ -1,6 +1,7 @@
 import os
 from flask import Blueprint, request, jsonify
 from db import get_connection, close_connection
+from datetime import datetime
 
 cadastrar_ativo_bp = Blueprint('cadastrar_ativo', __name__)
 
@@ -19,6 +20,9 @@ def cadastrar_ativo():
         estado = data.get('state')
         local = data.get('local')
         specific_fields = data.get('specificFields', {})
+
+        usuario = data.get('user') 
+        nome_usuario = data.get('nome')
 
         # Verificar o último identificador para a categoria
         cursor = conn.cursor()
@@ -48,82 +52,49 @@ def cadastrar_ativo():
         """, (nome, categoria_id, quantidade, descricao, identificacao, estado, local))
         ativo_id = cursor.lastrowid 
 
+        # Mapeamento de categorias para tabelas e colunas
+        category_mapping = {
+            1: ("adaptadores", ["tipo", "conexao_entrada", "conexao_saida"]),
+            2: ("armazenamento", ["tipo", "capacidade", "interface"]),
+            3: ("cabos", ["tipo", "comprimento", "material"]),
+            5: ("desktops", ["processador", "memoria_ram", "armazenamento", "fonte_alimentacao"]),
+            7: ("fontes", ["potencia_watts", "modular"]),
+            9: ("memorias_ram", ["capacidade", "tipo", "frequencia", "latencia"]),
+            10: ("monitores", ["tamanho_polegadas", "resolucao", "tipo_painel", "taxa_atualizacao", "conexoes"]),
+            11: ("notebooks", ["processador", "memoria_ram", "armazenamento", "tamanho_tela", "bateria"]),
+            12: ("nucs", ["processador", "memoria_ram", "armazenamento"]),
+            13: ("perifericos", ["tipo", "conexao", "marca"]),
+            14: ("redes", ["tipo", "velocidade", "interface", "protocolo_suportado"]),
+            15: ("telefonia", ["tipo", "tecnologia", "compatibilidade"]),
+        }
+
         # Inserir os campos específicos na tabela correspondente
-        if specific_fields:
-            if categoria_id == 1:  # Adaptadores
-                cursor.execute("""
-                    INSERT INTO adaptadores (ativo_id, tipo, conexao_entrada, conexao_saida)
-                    VALUES (%s, %s, %s, %s)
-                """, (ativo_id, specific_fields.get('Tipo'), specific_fields.get('Conexão Entrada'), specific_fields.get('Conexão Saída')))
-            elif categoria_id == 2:  # Armazenamento
-                cursor.execute("""
-                    INSERT INTO armazenamento (ativo_id, tipo, capacidade, interface)
-                    VALUES (%s, %s, %s, %s)
-                """, (ativo_id, specific_fields.get('Tipo'), specific_fields.get('Capacidade'), specific_fields.get('Interface')))
-            elif categoria_id == 3:  # Cabos
-                cursor.execute("""
-                    INSERT INTO cabos (ativo_id, tipo, comprimento, material)
-                    VALUES (%s, %s, %s, %s)
-                """, (ativo_id, specific_fields.get('Tipo'), specific_fields.get('Comprimento'), specific_fields.get('Material')))
-            elif categoria_id == 5:  # Desktop/AIO
-                cursor.execute("""
-                    INSERT INTO desktops (ativo_id, processador, memoria_ram, armazenamento, fonte_alimentacao)
-                    VALUES (%s, %s, %s, %s, %s)
-                """, (ativo_id, specific_fields.get('Processador'), specific_fields.get('Memória RAM'), specific_fields.get('Armazenamento'), specific_fields.get('Fonte Alimentação')))
-            elif categoria_id == 7:  # Fontes
-                cursor.execute("""
-                    INSERT INTO fontes (ativo_id, potencia_watts, modular)
-                    VALUES (%s, %s, %s)
-                """, (ativo_id, specific_fields.get('Potência Watts'), specific_fields.get('Modular')))
+        if specific_fields and categoria_id in category_mapping:
+            table_name, columns = category_mapping[categoria_id]
+            column_placeholders = ", ".join(["%s"] * len(columns))
+            column_names = ", ".join(columns)
+            values = [specific_fields.get(col.replace("_", " ").title()) for col in columns]
+
+            cursor.execute(f"""
+                INSERT INTO {table_name} (ativo_id, {column_names})
+                VALUES (%s, {column_placeholders})
+            """, [ativo_id] + values)
 
         conn.commit()
+
+        # Adicionar entrada no log
+        log_message = (
+            f"[{datetime.now().strftime('%d/%m/%Y %Hh%M')}] "
+            f"Usuário: {usuario}, Nome: {nome_usuario}, Movimentação: Cadastrou novo ativo {nome}, Identificação: {identificacao} "
+        )
+        with open('/home/usshd/estoque_ti/estoqueti_backend/logs.log', 'a') as log_file:
+            log_file.write(log_message + '\n')
 
         return jsonify({"message": "Ativo cadastrado com sucesso", "identificacao": identificacao}), 200
 
     except Exception as e:
         conn.rollback()
+        print(f"Erro ao cadastrar ativo: {str(e)}")
         return jsonify({"error": f"Erro ao cadastrar ativo: {str(e)}"}), 500
     finally:
         close_connection(conn)
-
-# +--------------------+
-# | Tables_in_estoque  |
-# +--------------------+
-# | adaptadores         | F
-# | armazenamento       | F
-# | ativos              | F
-# | cabos               | F
-# | categorias          | F
-# | desktops            | F
-# | fontes              | F
-# | memorias_ram       |
-# | monitores          |
-# | notebooks          |
-# | nucs               |
-# | perifericos        |
-# | redes              |
-# | telefonia          |
-# | usuarios           |
-# | usuarios_sem_senha |
-# +--------------------+
-
-# mysql> select * from categorias;
-# +----+----------------------+
-# | id | nome                 |
-# +----+----------------------+
-# |  1 | Adaptador            |
-# |  2 | Armazenamento        |
-# |  3 | Cabos                |
-# |  4 | Componentes diversos |
-# |  5 | Desktop/AIO          |
-# |  6 | Ferramentas          |
-# |  7 | Fontes               |
-# |  8 | Insumos              |
-# |  9 | Memória RAM          |
-# | 10 | Monitor              |
-# | 11 | Notebook             |
-# | 12 | NUC                  |
-# | 13 | Periféricos          |
-# | 14 | Redes                |
-# | 15 | Telefonia            |
-# +----+----------------------+

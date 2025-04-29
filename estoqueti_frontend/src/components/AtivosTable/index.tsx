@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
-import Divider from '@mui/joy/Divider';
 import Link from '@mui/joy/Link';
 import Table from '@mui/joy/Table';
 import Sheet from '@mui/joy/Sheet';
@@ -9,18 +8,14 @@ import Checkbox from '@mui/joy/Checkbox';
 import IconButton, { iconButtonClasses } from '@mui/joy/IconButton';
 import config from '../../config';
 import Typography from '@mui/joy/Typography';
-import Menu from '@mui/joy/Menu';
-import MenuButton from '@mui/joy/MenuButton';
-import MenuItem from '@mui/joy/MenuItem';
-import Dropdown from '@mui/joy/Dropdown';
 import axios from 'axios';
 import { useEffect } from 'react';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable'; 
+import RowMenu from '../RowMenu/RowMenu.tsx';
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
@@ -46,26 +41,6 @@ function getComparator<Key extends keyof any>(
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-function RowMenu() {
-  return (
-    <Dropdown>
-      <MenuButton
-        slots={{ root: IconButton }}
-        slotProps={{ root: { variant: 'plain', color: 'neutral', size: 'sm' } }}
-      >
-        <MoreHorizRoundedIcon />
-      </MenuButton>
-      <Menu size="sm" sx={{ minWidth: 140 }}>
-        <MenuItem>Editar</MenuItem>
-        <MenuItem>Renomear</MenuItem>
-        <MenuItem>Mover</MenuItem>
-        <Divider />
-        <MenuItem color="danger">Deletar</MenuItem>
-      </Menu>
-    </Dropdown>
-  );
-}
-
 type AtivosTableProps = {
   estado: string;
   local: string;
@@ -75,8 +50,7 @@ type AtivosTableProps = {
 
 export default function AtivosTable({ estado, local, tipo, quantidade }: AtivosTableProps) {
   const [order, setOrder] = React.useState<Order>('desc');
-  const [selected, setSelected] = React.useState<readonly string[]>([]);
-  const [open, setOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState<readonly (string | number)[]>([]);
   const [adaptadores, setAdaptadores] = React.useState([]);
   const [armazenamento, setArmazenamento] = React.useState([]);
   const [cabos, setCabos] = React.useState([]);
@@ -224,7 +198,7 @@ export default function AtivosTable({ estado, local, tipo, quantidade }: AtivosT
     armazenamento?: string;
     fonte_alimentacao?: string;
     potencia_watts?: string;
-    modular?: string;
+    modular?: number; 
     capacidade?: string;
     tipo?: string;
     frequencia?: string;
@@ -240,6 +214,7 @@ export default function AtivosTable({ estado, local, tipo, quantidade }: AtivosT
     protocolo_suportado?: string;
     tecnologia?: string;
     compatibilidade?: string;
+    marca?: string; 
   };
 
   const originalFilteredRows: Item[] = location === '/home/estoque/adaptadores'
@@ -384,7 +359,7 @@ export default function AtivosTable({ estado, local, tipo, quantidade }: AtivosT
                         state: item[6],
                         local: item[7],
                         tipo: item[8],
-                        conexao: item[9],
+                        conexoes: item[9],
                         marca: item[10]
                       }))
                       : location === '/home/estoque/redes'
@@ -508,7 +483,7 @@ function generateRowPDF(row) {
 
   return (
     <React.Fragment>
-      <Box sx={{ display: 'flex', flexDirection: 'column', height: '80%' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', height: '90%' }}>
         <Sheet
           sx={{
             display: { xs: 'none', sm: 'initial' },
@@ -656,7 +631,7 @@ function generateRowPDF(row) {
                 {location === '/home/estoque/perifericos' && (
                   <>
                     <th style={{ width: 100, padding: '12px 6px' }}>Tipo</th>
-                    <th style={{ width: 120, padding: '12px 6px' }}>Conexão</th>
+                    <th style={{ width: 120, padding: '12px 6px' }}>Conexões</th>
                     <th style={{ width: 120, padding: '12px 6px' }}>Marca</th>
                   </>
                 )}
@@ -689,7 +664,7 @@ function generateRowPDF(row) {
                       onChange={(event) => {
                         setSelected((ids) =>
                           event.target.checked
-                            ? ids.concat(row.id)
+                            ? ids.concat(row.id as string | number)
                             : ids.filter((itemId) => itemId !== row.id),
                         );
                       }}
@@ -777,7 +752,9 @@ function generateRowPDF(row) {
                         <Typography level="body-xs">{row.potencia_watts}</Typography>
                       </td>
                       <td>
-                        <Typography level="body-xs">{row.modular}</Typography>
+                        <Typography level="body-xs">
+                          {row.modular === 1 ? 'Sim' : row.modular === 0 ? 'Não' : 'N/A'}
+                        </Typography>
                       </td>
                     </>
                   )}
@@ -854,7 +831,7 @@ function generateRowPDF(row) {
                         <Typography level="body-xs">{row.tipo}</Typography>
                       </td>
                       <td>
-                        <Typography level="body-xs">{row.conexao}</Typography>
+                        <Typography level="body-xs">{row.conexoes}</Typography>
                       </td>
                       <td>
                         <Typography level="body-xs">{row.marca}</Typography>
@@ -907,48 +884,6 @@ function generateRowPDF(row) {
             </tbody>
           </Table>
         </Sheet>
-      </Box>
-      <Box
-        className="Pagination-laptopUp"
-        sx={{
-          pt: 2,
-          gap: 1,
-          [`& .${iconButtonClasses.root}`]: { borderRadius: '50%' },
-          display: {
-            xs: 'none',
-            md: 'flex',
-          },
-        }}
-      >
-        <Button
-          size="sm"
-          variant="outlined"
-          color="neutral"
-          startDecorator={<KeyboardArrowLeftIcon />}
-        >
-          Anterior
-        </Button>
-
-        <Box sx={{ flex: 1 }} />
-        {['1', '2', '3', '…', '8', '9', '10'].map((page) => (
-          <IconButton
-            key={page}
-            size="sm"
-            variant={Number(page) ? 'outlined' : 'plain'}
-            color="neutral"
-          >
-            {page}
-          </IconButton>
-        ))}
-        <Box sx={{ flex: 1 }} />
-        <Button
-          size="sm"
-          variant="outlined"
-          color="neutral"
-          endDecorator={<KeyboardArrowRightIcon />}
-        >
-          Próximo
-        </Button>
       </Box>
     </React.Fragment>
   );

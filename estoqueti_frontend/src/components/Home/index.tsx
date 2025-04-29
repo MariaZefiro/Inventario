@@ -6,10 +6,8 @@ import CssBaseline from '@mui/joy/CssBaseline';
 import Box from '@mui/joy/Box';
 import Breadcrumbs from '@mui/joy/Breadcrumbs';
 import Link from '@mui/joy/Link';
-
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
-
 import Sidebar from '../Sidebar/index.tsx';
 import EntradasSaidas from '../EntradasSaidas/index.tsx';
 import Estoque from '../Estoque/index.jsx';
@@ -17,6 +15,7 @@ import Header from '../Header';
 import TelaInicial from '../TelaInicial/index.jsx';
 import Dashboard from '../Dashboard/index.jsx';
 import Gerenciar from '../Gerenciar/index.jsx';
+import Atividade from '../Atividade/index.jsx';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -96,6 +95,7 @@ export default function Home() {
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="estoque/*" element={<Estoque />} />
             <Route path="gerenciar" element={<Gerenciar />} />
+            <Route path="atividade" element={<Atividade />} />
             <Route path="/" element={<TelaInicial />} /> 
           </Routes>
         </Box>
