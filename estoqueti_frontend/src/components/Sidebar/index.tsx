@@ -301,9 +301,9 @@ export default function Sidebar() {
           }}
         >
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={() => navigate('/home/reporte')}>
               <SupportRoundedIcon />
-              Fale Conosco
+              Reporte
             </ListItemButton>
           </ListItem>
           <ListItem>

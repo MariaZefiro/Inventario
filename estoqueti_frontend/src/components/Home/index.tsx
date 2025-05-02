@@ -16,10 +16,11 @@ import TelaInicial from '../TelaInicial/index.jsx';
 import Dashboard from '../Dashboard/index.jsx';
 import Gerenciar from '../Gerenciar/index.jsx';
 import Atividade from '../Atividade/index.jsx';
+import Reporte from '../Reporte/index.jsx';
 
 export default function Home() {
   const navigate = useNavigate();
-  const location = useLocation();
+  const location = useLocation();  
 
   useEffect(() => {
     const userData = localStorage.getItem('userData');
@@ -96,7 +97,8 @@ export default function Home() {
             <Route path="estoque/*" element={<Estoque />} />
             <Route path="gerenciar" element={<Gerenciar />} />
             <Route path="atividade" element={<Atividade />} />
-            <Route path="/" element={<TelaInicial />} /> 
+            <Route path="/" element={<TelaInicial />} />
+            <Route path="/reporte" element={<Reporte />} /> 
           </Routes>
         </Box>
       </Box>

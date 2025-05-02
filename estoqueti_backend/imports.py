@@ -53,6 +53,9 @@ from telefonia.list_telefonia import list_telefonia_bp
 #LOGS
 from log import list_logs_bp
 
+#FEEDBACKS
+from feedback import feedback_bp
+
 # Lista dos blueprints para registro
 blueprints = [
     login_bp,
@@ -71,5 +74,6 @@ blueprints = [
     list_all_bp,
     list_categorias_bp,
     cadastrar_ativo_bp,
-    list_logs_bp
+    list_logs_bp,
+    feedback_bp,
 ]

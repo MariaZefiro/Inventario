@@ -48,6 +48,46 @@ type AtivosTableProps = {
   quantidade: number[];
 };
 
+type Item = {
+  id: string | number;
+  name: string;
+  category: string;
+  quantity: number;
+  description: string;
+  identification: string;
+  state: string;
+  local: string;
+  type?: string; 
+  inputConnection?: string;
+  outputConnection?: string;
+  capacity?: string;
+  interface?: string;
+  comprimento?: string;
+  material?: string;
+  processador?: string;
+  memoria_ram?: string;
+  armazenamento?: string;
+  fonte_alimentacao?: string;
+  potencia_watts?: string;
+  modular?: number; 
+  capacidade?: string;
+  tipo?: string;
+  frequencia?: string;
+  latencia?: string;
+  tamanho_polegadas?: string;
+  resolucao?: string;
+  tipo_painel?: string;
+  taxa_atualizacao?: string;
+  conexoes?: string;
+  tamanho_tela?: string;
+  bateria?: string;
+  velocidade?: string;
+  protocolo_suportado?: string;
+  tecnologia?: string;
+  compatibilidade?: string;
+  marca?: string; 
+};
+
 export default function AtivosTable({ estado, local, tipo, quantidade }: AtivosTableProps) {
   const [order, setOrder] = React.useState<Order>('desc');
   const [selected, setSelected] = React.useState<readonly (string | number)[]>([]);
@@ -64,7 +104,7 @@ export default function AtivosTable({ estado, local, tipo, quantidade }: AtivosT
   const [redes, setRedes] = React.useState([]);
   const [telefonia, setTelefonia] = React.useState([]);
 
-  const [todos, setTodos] = React.useState([]);
+  const [todos, setTodos] = React.useState<Item[]>([]);
 
   const location = window.location.pathname;
   const backendIp = config.backend_ip;
@@ -176,46 +216,6 @@ export default function AtivosTable({ estado, local, tipo, quantidade }: AtivosT
         });
     }
   }, [location]);
-
-  type Item = {
-    id: string | number;
-    name: string;
-    category: string;
-    quantity: number;
-    description: string;
-    identification: string;
-    state: string;
-    local: string;
-    type?: string; 
-    inputConnection?: string;
-    outputConnection?: string;
-    capacity?: string;
-    interface?: string;
-    comprimento?: string;
-    material?: string;
-    processador?: string;
-    memoria_ram?: string;
-    armazenamento?: string;
-    fonte_alimentacao?: string;
-    potencia_watts?: string;
-    modular?: number; 
-    capacidade?: string;
-    tipo?: string;
-    frequencia?: string;
-    latencia?: string;
-    tamanho_polegadas?: string;
-    resolucao?: string;
-    tipo_painel?: string;
-    taxa_atualizacao?: string;
-    conexoes?: string;
-    tamanho_tela?: string;
-    bateria?: string;
-    velocidade?: string;
-    protocolo_suportado?: string;
-    tecnologia?: string;
-    compatibilidade?: string;
-    marca?: string; 
-  };
 
   const originalFilteredRows: Item[] = location === '/home/estoque/adaptadores'
     ? adaptadores.map(adaptador => ({
@@ -656,7 +656,7 @@ function generateRowPDF(row) {
             <tbody>
               {[...filteredRows].sort(getComparator(order, 'id')).map((row) => (
                 <tr key={row.id}>
-                  <td style={{ textAlign: 'center', width: 120 }}>
+                  <td style={{ textAlign: 'center', width: 120, overflowWrap: 'anywhere' }}>
                     <Checkbox
                       size="sm"
                       checked={selected.includes(row.id)}
@@ -672,75 +672,75 @@ function generateRowPDF(row) {
                       sx={{ verticalAlign: 'text-bottom' }}
                     />
                   </td>
-                  <td>
+                  <td style={{ overflowWrap: 'anywhere' }}>
                     <Typography level="body-xs">{row.identification}</Typography>
                   </td>
-                  <td>
+                  <td style={{ overflowWrap: 'anywhere' }}>
                     <Typography level="body-xs">{row.name}</Typography>
                   </td>
-                  <td>
+                  <td style={{ overflowWrap: 'anywhere' }}>
                     <Typography level="body-xs">{row.quantity}</Typography>
                   </td>
-                  <td>
+                  <td style={{ overflowWrap: 'anywhere' }}>
                     <Typography level="body-xs">{row.description}</Typography>
                   </td>
-                  <td>
+                  <td style={{ overflowWrap: 'anywhere' }}>
                     <Typography level="body-xs">{row.state}</Typography>
                   </td>
-                  <td>
+                  <td style={{ overflowWrap: 'anywhere' }}>
                     <Typography level="body-xs">{row.local}</Typography>
                   </td>
                   {location === '/home/estoque/armazenamento' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.type}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.capacity}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.interface}</Typography>
                       </td>
                     </>
                   )}
                   {location === '/home/estoque/adaptadores' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.type}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.inputConnection}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.outputConnection}</Typography>
                       </td>
                     </>
                   )}
                   {location === '/home/estoque/cabos' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.type}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.comprimento}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.material}</Typography>
                       </td>
                     </>
                   )}
                   {location === '/home/estoque/desktops' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.processador}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.memoria_ram}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.armazenamento}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.fonte_alimentacao}</Typography>
                       </td>
                     </>
@@ -748,10 +748,10 @@ function generateRowPDF(row) {
 
                   {location === '/home/estoque/fontes' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.potencia_watts}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">
                           {row.modular === 1 ? 'Sim' : row.modular === 0 ? 'Não' : 'N/A'}
                         </Typography>
@@ -760,114 +760,114 @@ function generateRowPDF(row) {
                   )}
                   {location === '/home/estoque/memoria_ram' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.capacidade}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.tipo}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.frequencia}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.latencia}</Typography>
                       </td>
                     </>
                   )}
                   {location === '/home/estoque/monitores' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.tamanho_polegadas}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.resolucao}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.tipo_painel}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.taxa_atualizacao}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.conexoes}</Typography>
                       </td>
                     </>
                   )}
                   {location === '/home/estoque/notebooks' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.processador}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.memoria_ram}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.armazenamento}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.tamanho_tela}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.bateria}</Typography>
                       </td>
                     </>
                   )}
                   {location === '/home/estoque/nucs' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.processador}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.memoria_ram}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.armazenamento}</Typography>
                       </td>
                     </>
                   )}
                   {location === '/home/estoque/perifericos' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.tipo}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.conexoes}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.marca}</Typography>
                       </td>
                     </>
                   )}
                   {location === '/home/estoque/redes' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.tipo}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.velocidade}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.interface}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.protocolo_suportado}</Typography>
                       </td>
                     </>
                   )}
                   {location === '/home/estoque/telefonia' && (
                     <>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.tipo}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.tecnologia}</Typography>
                       </td>
-                      <td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.compatibilidade}</Typography>
                       </td>
                     </>
                   )}
-                  <td>
+                  <td style={{ overflowWrap: 'anywhere' }}>
                     <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
                       <Link
                         level="body-xs"
@@ -876,7 +876,14 @@ function generateRowPDF(row) {
                       >
                         Download
                       </Link>
-                      <RowMenu />
+                      <RowMenu
+                        row={row}
+                        onSave={(updatedRow: Item) => {
+                          setTodos((prev) =>
+                            prev.map((item) => (item.id === updatedRow.id ? updatedRow : item))
+                          );
+                        }}
+                      />
                     </Box>
                   </td>
                 </tr>
