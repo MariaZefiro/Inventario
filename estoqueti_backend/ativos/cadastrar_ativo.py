@@ -24,16 +24,14 @@ def cadastrar_ativo():
         usuario = data.get('user') 
         nome_usuario = data.get('nome')
 
-        # Verificar o último identificador para a categoria
+        # Verificar o número de entradas para a categoria
         cursor = conn.cursor()
         cursor.execute("""
-            SELECT identificacao 
+            SELECT COUNT(*) 
             FROM ativos 
-            WHERE categoria_id = %s 
-            ORDER BY identificacao DESC 
-            LIMIT 1
+            WHERE categoria_id = %s
         """, (categoria_id,))
-        last_id = cursor.fetchone()
+        total_entries = cursor.fetchone()[0]
 
         # Gerar o próximo identificador
         cursor.execute("SELECT nome FROM categorias WHERE id = %s", (categoria_id,))
@@ -42,7 +40,7 @@ def cadastrar_ativo():
             return jsonify({"error": "Categoria inválida"}), 400
 
         prefix = category_name[0][:3].upper()
-        next_number = int(last_id[0][3:]) + 1 if last_id else 1
+        next_number = total_entries + 1
         identificacao = f"{prefix}{str(next_number).zfill(3)}"
 
         # Inserir o ativo no banco de dados
@@ -73,7 +71,12 @@ def cadastrar_ativo():
             table_name, columns = category_mapping[categoria_id]
             column_placeholders = ", ".join(["%s"] * len(columns))
             column_names = ", ".join(columns)
-            values = [specific_fields.get(col.replace("_", " ").title()) for col in columns]
+
+            normalized_fields = {
+                key.lower().replace(" ", "_").replace("ç", "c").replace("ã", "a").replace("í", "i").replace("ê", "e").replace("õ", "o").replace("ó", "o"): value
+                for key, value in specific_fields.items()
+            }
+            values = [normalized_fields.get(col) for col in columns]
 
             cursor.execute(f"""
                 INSERT INTO {table_name} (ativo_id, {column_names})
@@ -94,7 +97,6 @@ def cadastrar_ativo():
 
     except Exception as e:
         conn.rollback()
-        print(f"Erro ao cadastrar ativo: {str(e)}")
         return jsonify({"error": f"Erro ao cadastrar ativo: {str(e)}"}), 500
     finally:
         close_connection(conn)

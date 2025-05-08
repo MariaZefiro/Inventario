@@ -171,7 +171,6 @@ export default function EntradasSaidas() {
                 </Button>
             </Box>
             <OrderTable data={rows} type="orders" />
-            <OrderList />
         </CssVarsProvider >
     );
 }

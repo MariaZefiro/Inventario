@@ -57,7 +57,7 @@ export default function Gerenciar() {
             ...prev,
             specificFields: {
                 ...prev.specificFields,
-                [field]: field === 'Modular' ? (value === 'Sim' ? 1 : 0) : value,
+                [field]: value,
             },
         }));
     };
@@ -298,25 +298,27 @@ export default function Gerenciar() {
                                 <Typography level="body1" sx={{ marginBottom: 1 }}>
                                     {field}
                                 </Typography>
-                                <Input
-                                    placeholder={`Digite aqui`}
-                                    value={
-                                        field === 'Modular'
-                                            ? formData.specificFields[field] === 1
-                                                ? 'Sim'
-                                                : formData.specificFields[field] === 0
-                                                    ? 'Não'
-                                                    : ''
-                                            : formData.specificFields[field] || ''
-                                    }
-                                    onChange={(e) =>
-                                        handleSpecificFieldChange(
-                                            field,
-                                            field === 'Modular' ? e.target.value : e.target.value
-                                        )
-                                    }
-                                    sx={{ borderRadius: '8px', width: '100%' }}
-                                />
+                                {field === 'Modular' ? (
+                                    <Autocomplete
+                                        placeholder="Selecione"
+                                        options={['Sim', 'Não']}
+                                        value={formData.specificFields[field] || ''}
+                                        onChange={(event, newValue) =>
+                                            handleSpecificFieldChange(field, newValue)
+                                        }
+                                        renderInput={(params) => (
+                                            <Input {...params} placeholder="Selecione" sx={{ borderRadius: '8px', width: '100%' }} />
+                                        )}
+                                        sx={{ width: '100%' }}
+                                    />
+                                ) : (
+                                    <Input
+                                        placeholder={`Digite aqui`}
+                                        value={formData.specificFields[field] || ''}
+                                        onChange={(e) => handleSpecificFieldChange(field, e.target.value)}
+                                        sx={{ borderRadius: '8px', width: '100%' }}
+                                    />
+                                )}
                             </Box>
                         ))}
                     </Box>

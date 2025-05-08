@@ -753,7 +753,7 @@ function generateRowPDF(row) {
                       </td>
                       <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">
-                          {row.modular === 1 ? 'Sim' : row.modular === 0 ? 'Não' : 'N/A'}
+                          {row.modular}
                         </Typography>
                       </td>
                     </>
