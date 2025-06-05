@@ -1,0 +1,110 @@
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(78, 78, 78);
+    margin-bottom: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-field,
+.textarea-field {
+    max-width: 50%;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #fcfdfd;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:disabled {
+    background-color: #ececec;
+}
+
+.input-field:focus,
+.textarea-field:focus {
+    border-color: #CCE9E3;
+    box-shadow: 0 0 8px #CCE9E3;
+}
+
+.textarea-field {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    max-width: 50%;
+}
+
+.image-preview-container {
+    margin-top: 10px;
+}
+
+.image-preview-feedback {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.preview-thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.theme-dark .form-group label{
+    color: white;
+}
+
+.theme-dark .form-group input {
+    background-color: var(--form-background-dark);
+    color: white;
+}
+
+.theme-dark .form-group textarea {
+    background-color: var(--form-background-dark);
+    color: white;
+}
+
+
+@media (max-width: 800px){
+
+    .feedback-form{
+        display: flex;
+        width: 100% !important;
+    }
+
+    .form-group{
+        width: 550px !important;
+    }
+    .form-actions{
+        max-width: 100% !important;
+        justify-content: center;
+    }
+    .label{
+        width: 280px !important;
+    }
+   .anexos{
+        width: 300px;
+   }
+
+}
