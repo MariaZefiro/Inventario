@@ -22,12 +22,15 @@ def list_nucs():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 nc.processador,
                 nc.memoria_ram,
                 nc.armazenamento,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN nucs nc ON a.id = nc.ativo_id;
+            LEFT JOIN nucs nc ON a.id = nc.ativo_id
+            WHERE a.categoria_id = 12
+            ORDER BY a.id;
         """
         cursor.execute(query)
         nucs = cursor.fetchall()

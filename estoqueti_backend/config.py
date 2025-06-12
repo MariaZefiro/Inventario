@@ -1,5 +1,7 @@
 import os
 
+# É RECOMENDADO QUE VOCÊ UTILIZE O VAULT PARA ARMAZENAR AS SENHAS E DADOS SENSÍVEIS
+
 # Configurações da aplicação 
 app_ip = "0.0.0.0"
 

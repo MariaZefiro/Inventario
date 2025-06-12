@@ -61,6 +61,7 @@ type Item = {
   identification: string;
   state: string;
   local: string;
+  serial: string;
   type?: string;
   inputConnection?: string;
   outputConnection?: string;
@@ -233,10 +234,11 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: adaptador[5],
         state: adaptador[6],
         local: adaptador[7],
-        type: adaptador[8],
-        inputConnection: adaptador[9],
-        outputConnection: adaptador[10],
-        supervisionado: adaptador[11],
+        serial: adaptador[8],
+        type: adaptador[9],
+        inputConnection: adaptador[10],
+        outputConnection: adaptador[11],
+        supervisionado: adaptador[12],
       }));
     }
     if (location === '/home/estoque/armazenamento') {
@@ -249,10 +251,11 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        type: item[8],
-        capacity: item[9],
-        interface: item[10],
-        supervisionado: item[11],
+        serial: item[8],
+        type: item[9],
+        capacity: item[10],
+        interface: item[11],
+        supervisionado: item[12],
       }));
     }
     if (location === '/home/estoque/cabos') {
@@ -265,10 +268,11 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        type: item[8],
-        comprimento: item[9],
-        material: item[10],
-        supervisionado: item[11],
+        serial: item[8],
+        type: item[9],
+        comprimento: item[10],
+        material: item[11],
+        supervisionado: item[12],
       }));
     }
     if (location === '/home/estoque/desktops') {
@@ -281,11 +285,12 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        processador: item[8],
-        memoria_ram: item[9],
-        armazenamento: item[10],
-        fonte_alimentacao: item[11],
-        supervisionado: item[12],
+        serial: item[8],
+        processador: item[9],
+        memoria_ram: item[10],
+        armazenamento: item[11],
+        fonte_alimentacao: item[12],
+        supervisionado: item[13],
       }));
     }
     if (location === '/home/estoque/fontes') {
@@ -298,9 +303,10 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        potencia_watts: item[8],
-        modular: item[9],
-        supervisionado: item[10],
+        serial: item[8],
+        potencia_watts: item[9],
+        modular: item[10],
+        supervisionado: item[11],
       }));
     }
     if (location === '/home/estoque/memoria_ram') {
@@ -313,11 +319,12 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        capacidade: item[8],
-        tipo: item[9],
-        frequencia: item[10],
-        latencia: item[11],
-        supervisionado: item[12],
+        serial: item[8],
+        capacidade: item[9],
+        tipo: item[10],
+        frequencia: item[11],
+        latencia: item[12],
+        supervisionado: item[13],
       }));
     }
     if (location === '/home/estoque/monitores') {
@@ -330,12 +337,13 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        tamanho_polegadas: item[8],
-        resolucao: item[9],
-        tipo_painel: item[10],
-        taxa_atualizacao: item[11],
-        conexoes: item[12],
-        supervisionado: item[13],
+        serial: item[8],
+        tamanho_polegadas: item[9],
+        resolucao: item[10],
+        tipo_painel: item[11],
+        taxa_atualizacao: item[12],
+        conexoes: item[13],
+        supervisionado: item[14],
       }));
     }
     if (location === '/home/estoque/notebooks') {
@@ -348,12 +356,13 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        processador: item[8],
-        memoria_ram: item[9],
-        armazenamento: item[10],
-        tamanho_tela: item[11],
-        bateria: item[12],
-        supervisionado: item[13],
+        serial: item[8],
+        processador: item[9],
+        memoria_ram: item[10],
+        armazenamento: item[11],
+        tamanho_tela: item[12],
+        bateria: item[13],
+        supervisionado: item[14],
       }));
     }
     if (location === '/home/estoque/nucs') {
@@ -366,10 +375,11 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        processador: item[8],
-        memoria_ram: item[9],
-        armazenamento: item[10],
-        supervisionado: item[11],
+        serial: item[8],
+        processador: item[9],
+        memoria_ram: item[10],
+        armazenamento: item[11],
+        supervisionado: item[12],
       }));
     }
     if (location === '/home/estoque/perifericos') {
@@ -382,10 +392,11 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        tipo: item[8],
-        conexoes: item[9],
-        marca: item[10],
-        supervisionado: item[11],
+        serial: item[8],
+        tipo: item[9],
+        conexoes: item[10],
+        marca: item[11],
+        supervisionado: item[12],
       }));
     }
     if (location === '/home/estoque/redes') {
@@ -398,11 +409,12 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        tipo: item[8],
-        velocidade: item[9],
-        interface: item[10],
-        protocolo_suportado: item[11],
-        supervisionado: item[12],
+        serial: item[8],
+        tipo: item[9],
+        velocidade: item[10],
+        interface: item[11],
+        protocolo_suportado: item[12],
+        supervisionado: item[13],
       }));
     }
     if (location === '/home/estoque/telefonia') {
@@ -415,10 +427,11 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        tipo: item[8],
-        tecnologia: item[9],
-        compatibilidade: item[10],
-        supervisionado: item[11],
+        serial: item[8],
+        tipo: item[9],
+        tecnologia: item[10],
+        compatibilidade: item[11],
+        supervisionado: item[12],
       }));
     }
     if (location === '/home/estoque/todos-componentes') {
@@ -431,7 +444,8 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         identification: item[5],
         state: item[6],
         local: item[7],
-        supervisionado: item[8],
+        supervisionado: item[9],
+        serial: item[10], 
       }));
     }
     return [];
@@ -492,6 +506,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
       identification: "Identificação",
       state: "Estado",
       local: "Local",
+      serial: "Serial Number",
       type: "Tipo",
       inputConnection: "Conexão de Entrada",
       outputConnection: "Conexão de Saída",
@@ -657,6 +672,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "type" },
         { label: "Conexão de Entrada", key: "inputConnection" },
         { label: "Conexão de Saída", key: "outputConnection" },
@@ -667,6 +683,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "type" },
         { label: "Capacidade", key: "capacity" },
         { label: "Interface", key: "interface" },
@@ -677,6 +694,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "type" },
         { label: "Comprimento", key: "comprimento" },
         { label: "Material", key: "material" },
@@ -687,6 +705,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Processador", key: "processador" },
         { label: "Memória RAM", key: "memoria_ram" },
         { label: "Armazenamento", key: "armazenamento" },
@@ -698,6 +717,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Potência Watts", key: "potencia_watts" },
         { label: "Modular", key: "modular" },
       ],
@@ -707,6 +727,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Capacidade", key: "capacidade" },
         { label: "Tipo", key: "tipo" },
         { label: "Frequência", key: "frequencia" },
@@ -718,6 +739,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Polegadas", key: "tamanho_polegadas" },
         { label: "Resolução", key: "resolucao" },
         { label: "Painel", key: "tipo_painel" },
@@ -730,6 +752,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Processador", key: "processador" },
         { label: "Memória RAM", key: "memoria_ram" },
         { label: "Armazenamento", key: "armazenamento" },
@@ -742,6 +765,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Processador", key: "processador" },
         { label: "Memória RAM", key: "memoria_ram" },
         { label: "Armazenamento", key: "armazenamento" },
@@ -752,6 +776,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "tipo" },
         { label: "Conexões", key: "conexoes" },
         { label: "Marca", key: "marca" },
@@ -762,6 +787,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "tipo" },
         { label: "Velocidade", key: "velocidade" },
         { label: "Interface", key: "interface" },
@@ -773,6 +799,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "tipo" },
         { label: "Tecnologia", key: "tecnologia" },
         { label: "Compatibilidade", key: "compatibilidade" },
@@ -783,6 +810,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
       ],
     };
 
@@ -848,6 +876,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "type" },
         { label: "Conexão de Entrada", key: "inputConnection" },
         { label: "Conexão de Saída", key: "outputConnection" },
@@ -858,6 +887,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "type" },
         { label: "Capacidade", key: "capacity" },
         { label: "Interface", key: "interface" },
@@ -868,6 +898,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "type" },
         { label: "Comprimento", key: "comprimento" },
         { label: "Material", key: "material" },
@@ -878,6 +909,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Processador", key: "processador" },
         { label: "Memória RAM", key: "memoria_ram" },
         { label: "Armazenamento", key: "armazenamento" },
@@ -889,6 +921,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Potência Watts", key: "potencia_watts" },
         { label: "Modular", key: "modular" },
       ],
@@ -898,6 +931,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Capacidade", key: "capacidade" },
         { label: "Tipo", key: "tipo" },
         { label: "Frequência", key: "frequencia" },
@@ -909,6 +943,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Polegadas", key: "tamanho_polegadas" },
         { label: "Resolução", key: "resolucao" },
         { label: "Painel", key: "tipo_painel" },
@@ -921,6 +956,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Processador", key: "processador" },
         { label: "Memória RAM", key: "memoria_ram" },
         { label: "Armazenamento", key: "armazenamento" },
@@ -933,6 +969,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Processador", key: "processador" },
         { label: "Memória RAM", key: "memoria_ram" },
         { label: "Armazenamento", key: "armazenamento" },
@@ -943,6 +980,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "tipo" },
         { label: "Conexões", key: "conexoes" },
         { label: "Marca", key: "marca" },
@@ -953,6 +991,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "tipo" },
         { label: "Velocidade", key: "velocidade" },
         { label: "Interface", key: "interface" },
@@ -964,6 +1003,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
         { label: "Tipo", key: "tipo" },
         { label: "Tecnologia", key: "tecnologia" },
         { label: "Compatibilidade", key: "compatibilidade" },
@@ -974,6 +1014,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
         { label: "Descrição", key: "description" },
         { label: "Estado", key: "state" },
         { label: "Local", key: "local" },
+        { label: "Serial Number", key: "serial" },
       ],
     };
     const columns = columnsByPath[location] || columnsByPath['/home/estoque/todos-componentes'];
@@ -1009,6 +1050,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
           <Typography level="body-xs">Qtd: {row.quantity}</Typography>
           <Typography level="body-xs">Estado: {row.state}</Typography>
           <Typography level="body-xs">Local: {row.local}</Typography>
+          <Typography level="body-xs">Serial Number: {row.serial}</Typography>
           {row.description && (
             <Typography level="body-xs" sx={{ wordBreak: 'break-word' }}>
               {row.description}
@@ -1052,7 +1094,9 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
             <>
               <Divider />
               <Typography level="body-xs">Potência: {row.potencia_watts}</Typography>
-              <Typography level="body-xs">Modular: {row.modular}</Typography>
+              <Typography level="body-xs">
+                Modular: {row.modular === 1 || row.modular === '1' ? 'Sim' : row.modular === 0 || row.modular === '0' ? 'Não' : ''}
+              </Typography>
             </>
           )}
           {location === '/home/estoque/memoria_ram' && (
@@ -1250,6 +1294,7 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
                     <th style={{ width: 120, padding: '12px 6px' }}>Descrição</th>
                     <th style={{ width: 100, padding: '12px 6px' }}>Estado</th>
                     <th style={{ width: 100, padding: '12px 6px' }}>Local</th>
+                    <th style={{ width: 100, padding: '12px 6px' }}>Serial</th>
                     {location === '/home/estoque/armazenamento' && (
                       <>
                         <th style={{ width: 100, padding: '12px 6px' }}>Tipo</th>
@@ -1381,6 +1426,9 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
                       <td style={{ overflowWrap: 'anywhere' }}>
                         <Typography level="body-xs">{row.local}</Typography>
                       </td>
+                      <td style={{ overflowWrap: 'anywhere' }}>
+                        <Typography level="body-xs">{row.serial}</Typography>
+                      </td>
                       {location === '/home/estoque/armazenamento' && (
                         <>
                           <td style={{ overflowWrap: 'anywhere' }}>
@@ -1436,7 +1484,6 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
                           </td>
                         </>
                       )}
-
                       {location === '/home/estoque/fontes' && (
                         <>
                           <td style={{ overflowWrap: 'anywhere' }}>
@@ -1444,7 +1491,11 @@ export default function AtivosTable({ estado, local, quantidade, extraFilter, on
                           </td>
                           <td style={{ overflowWrap: 'anywhere' }}>
                             <Typography level="body-xs">
-                              {row.modular}
+                              {row.modular === 1 || row.modular === '1'
+                                ? 'Sim'
+                                : row.modular === 0 || row.modular === '0'
+                                ? 'Não'
+                                : ''}
                             </Typography>
                           </td>
                         </>

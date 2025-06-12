@@ -22,6 +22,7 @@ def list_notebooks():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 nb.processador,
                 nb.memoria_ram,
                 nb.armazenamento,
@@ -29,7 +30,9 @@ def list_notebooks():
                 nb.bateria,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN notebooks nb ON a.id = nb.ativo_id;
+            LEFT JOIN notebooks nb ON a.id = nb.ativo_id
+            WHERE a.categoria_id = 11
+            ORDER BY a.id;
         """
         cursor.execute(query)
         notebooks = cursor.fetchall()

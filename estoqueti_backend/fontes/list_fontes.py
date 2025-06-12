@@ -22,11 +22,14 @@ def list_fontes():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 ft.potencia_watts,
                 ft.modular,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN fontes ft ON a.id = ft.ativo_id;
+            LEFT JOIN fontes ft ON a.id = ft.ativo_id
+            WHERE a.categoria_id = 7
+            ORDER BY a.id;
         """
         cursor.execute(query)
         fontes = cursor.fetchall()

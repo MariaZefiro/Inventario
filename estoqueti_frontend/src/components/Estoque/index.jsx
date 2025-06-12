@@ -27,14 +27,14 @@ export default function Estoque() {
     const [estado, setEstado] = useState('');
     const [local, setLocal] = useState('');
     const [quantidade, setQuantidade] = useState([0, 100]);
-    const [sliderValue, setSliderValue] = useState([0, 100]); 
-    const [ativosData, setAtivosData] = useState([]); 
+    const [sliderValue, setSliderValue] = useState([0, 100]);
+    const [ativosData, setAtivosData] = useState([]);
     const [extraFilter, setExtraFilter] = useState('');
     const exportPDFRef = useRef(null);
     const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
 
     const backendIp = config.backend_ip;
-    
+
     useEffect(() => {
         const userData = localStorage.getItem('userData');
         if (!userData) {
@@ -44,10 +44,10 @@ export default function Estoque() {
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setQuantidade(sliderValue); 
-        }, 300); 
+            setQuantidade(sliderValue);
+        }, 300);
 
-        return () => clearTimeout(timeout); 
+        return () => clearTimeout(timeout);
     }, [sliderValue]);
 
     useEffect(() => {
@@ -196,7 +196,7 @@ export default function Estoque() {
                                 value={local}
                                 onChange={(event, newValue) => setLocal(newValue || '')}
                                 options={[
-                                    'Lab TI', 'TI', 'CGR', 'Engenharia', 'Homologação', 'Aferição', 'Estoque',
+                                    'Lab TI', 'TI', 'Administrativo', 'Financeiro', 'Recepção ADM', 'Gerente Financeiro', 'Recepção', 'Sala de Reunião', 'Portaria Call Center', 'Call Center', 'Sala de Reunião Principal Call Center', 'Sala de Reunião Corredor Call Center', 'Sala de Reunião Comercial', 'CGR', 'Aferição', 'Comunicação', 'Desenvolvimento', 'Engenharia', 'Estoque 1 Alocado', 'Estoque 1 Estocado', 'Estoque 2 Alocado', 'Estoque 2 Estocado', 'Estoque 3 Alocado', 'Estoque 3 Estocado', 'Estoque 4 Alocado', 'Estoque 4 Estocado', 'Estoque 5 Alocado', 'Estoque 5 Estocado', 'Expansão', 'Frota', 'Jurídico', 'Logística', 'Loja 1', 'Loja 2', 'Loja 3', 'Loja 4', 'Loja 5', 'Stand 1', 'Patrimônio', 'Projetos', 'RH'
                                 ]}
                             />
                         </Box>

@@ -22,12 +22,15 @@ def list_armazenamento():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 am.tipo,
                 am.capacidade,
                 am.interface,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN armazenamento am ON a.id = am.ativo_id;
+            LEFT JOIN armazenamento am ON a.id = am.ativo_id
+            WHERE a.categoria_id = 2
+            ORDER BY a.id;
         """
         cursor.execute(query)
         armazenamento = cursor.fetchall()

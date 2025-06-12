@@ -22,13 +22,16 @@ def list_ram():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 mr.capacidade,
                 mr.tipo,
                 mr.frequencia,
                 mr.latencia,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN memorias_ram mr ON a.id = mr.ativo_id;
+            LEFT JOIN memorias_ram mr ON a.id = mr.ativo_id
+            WHERE a.categoria_id = 9
+            ORDER BY a.id;
         """
         cursor.execute(query)
         ram = cursor.fetchall()

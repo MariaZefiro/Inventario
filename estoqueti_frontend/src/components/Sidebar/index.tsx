@@ -78,6 +78,7 @@ export default function Sidebar() {
     { label: 'Dashboard', icon: <DashboardRoundedIcon />, route: '/home/dashboard' },
     { label: 'Atividade', icon: <PreviewRoundedIcon />, route: '/home/atividade' },
     { label: 'Entradas e Saídas', icon: <ShoppingCartRoundedIcon />, route: '/home/entradas-saidas' },
+    { label: 'Gerenciar', icon: <InventoryIcon />, route: '/home/gerenciar' },
     {
       label: 'Estoque',
       icon: <AssignmentRoundedIcon />,
@@ -98,7 +99,6 @@ export default function Sidebar() {
         { label: 'Telefonia', route: '/home/estoque/telefonia' },
       ],
     },
-    { label: 'Gerenciar', icon: <InventoryIcon />, route: '/home/gerenciar' },
   ];
 
   const [filteredItems, setFilteredItems] = useState(menuItems);

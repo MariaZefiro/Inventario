@@ -22,12 +22,15 @@ def list_cabos():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 cb.tipo,
                 cb.comprimento,
                 cb.material,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN cabos cb ON a.id = cb.ativo_id;
+            LEFT JOIN cabos cb ON a.id = cb.ativo_id
+            WHERE a.categoria_id = 3
+            ORDER BY a.id;
         """
         cursor.execute(query)
         cabos = cursor.fetchall()

@@ -1,117 +1,379 @@
-[29/04/2025 14h26] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo TESTE, Identificação: FON007 
-[29/04/2025 14h27] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo TESTE, Identificação: ADA002 
-[29/04/2025 14h29] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo TEST3, Identificação: CAB006 
-[29/04/2025 14h30] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo TEST3, Identificação: ADA003 
-[29/04/2025 14h32] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo TEST3TEST3, Identificação: ADA004 
-[29/04/2025 14h33] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo TEST3TEST4, Identificação: CAB005 
-[29/04/2025 14h35] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo TEST3TE3, Identificação: FON008 
-[29/04/2025 14h35] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo TESTST3, Identificação: FON009 
-[29/04/2025 14h36] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo TE3TEST3, Identificação: FON010 
-[29/04/2025 14h38] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo asfaasfas, Identificação: TEL007 
-[06/05/2025 11h27] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Adaptador TESTE, Identificação: ADA002 
-[06/05/2025 11h36] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Adaptador TESTE     , Identificação: ADA002 
-[06/05/2025 11h48] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Adaptador TESTE , Identificação: ADA008 
-[06/05/2025 11h54] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Adaptador TESTE , Identificação: ADA009 
-[06/05/2025 11h55] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo print(f"Tabela: {table_name}"), Identificação: ADA010 
-[06/05/2025 11h58] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo conexao_entrada, Identificação: ADA011 
-[06/05/2025 11h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo .replace("ç", "c"), Identificação: ADA012 
-[06/05/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo ARAMAZENAMENTO, Identificação: ARM005 
-[06/05/2025 12h11] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Cabos, Identificação: CAB006 
-[06/05/2025 12h13] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Desktop, Identificação: DES006 
-[06/05/2025 12h24] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Memoria RAM, Identificação: MEM006 
-[06/05/2025 12h27] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Monitor, Identificação: MON006 
-[06/05/2025 12h29] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo AS, Identificação: MON007 
-[06/05/2025 12h30] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo dadada, Identificação: MON008 
-[06/05/2025 13h44] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Notebook, Identificação: NOT006 
-[06/05/2025 13h45] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Desktop, Identificação: DES007 
-[06/05/2025 13h46] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo notebok, Identificação: NOT007 
-[06/05/2025 13h51] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo NUC, Identificação: NUC006 
-[06/05/2025 13h56] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Redes, Identificação: RED004 
-[06/05/2025 13h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefonia, Identificação: TEL006 
-[06/05/2025 14h21] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Fontes, Identificação: FON005 
-[06/05/2025 14h27] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Fontes , Identificação: FON006 
-[06/05/2025 14h33] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Fontes, Identificação: FON007 
-[06/05/2025 16h23] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Test, Identificação: ARM005 
-[06/05/2025 16h27] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo teste, Identificação: ARM006 
-[08/05/2025 16h13] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Cabo USB-C para USB-A 1m, Identificação: ARM006
-[08/05/2025 16h19] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Monitor Asus TUF Gaming 27" 165Hz, Identificação: MON005 
-[09/05/2025 13h56] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo hvuhvjhvji, Identificação: ARM006 
-[09/05/2025 13h57] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Test, Identificação: ARM005 
-[09/05/2025 13h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Celular OnePlus 9 Pro, Identificação: TEL005 
-[09/05/2025 14h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Celular Xiaomi 12 Pro, Identificação: TEL004 
-[09/05/2025 14h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Celular Motorola Edge 30, Identificação: TEL003 
-[09/05/2025 14h04] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Impressora HP LaserJet Pro M404dn, Identificação: IMP001 
-[09/05/2025 14h04] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Celular iPhone 13, Identificação: TEL002 
-[09/05/2025 14h05] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Pen Drive Sandisk 128GB, Identificação: ARM004 
-[09/05/2025 14h35] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Teste de Barcode, Identificação: ADA001 
-[09/05/2025 14h57] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo ASA, Identificação: ADA002 
-[09/05/2025 15h12] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo asdsad, Identificação: ADA003 
-[12/05/2025 10h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo asdsad, Identificação: ADA003 
-[12/05/2025 10h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Testede barcero, Identificação: ADA003 
-[12/05/2025 10h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Testede barcero, Identificação: ADA003 
-[12/05/2025 10h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Testede barcero, Identificação: ADA003 
-[12/05/2025 10h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Testede barcero, Identificação: ADA003 
-[12/05/2025 12h06] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Adição valor ao ativo Teste de Barcode, Identificação: ADA001 
-[12/05/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Retirada valor ao ativo Teste de Barcode, Identificação: ADA001 
-[12/05/2025 12h19] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Entrada ativo Teste de Barcode, Identificação: ADA001 
-[12/05/2025 15h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo xz, Identificação: CAB003 
-[12/05/2025 15h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo xz, Identificação: CAB003 
-[12/05/2025 16h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Fonte Seasonic 850W, Identificação: FNT004 
-[13/05/2025 09h23] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo ADA3, Identificação: ADA003 
-[13/05/2025 13h50] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[13/05/2025 14h26] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[13/05/2025 15h53] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[14/05/2025 09h31] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Retirada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[14/05/2025 10h55] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[14/05/2025 10h56] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Retirada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[14/05/2025 10h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[14/05/2025 11h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo HDD Western Digital 2TB, Identificação: ARM004 
-[14/05/2025 11h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo HDD Western Digital 2TB, Identificação: ARM004 
-[14/05/2025 11h06] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Retirada supervisionada no ativo HDD Western Digital 2TB, Identificação: ARM004 
-[14/05/2025 11h13] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Cabo P2 para P2 1.8m, Identificação: CAB005 
-[14/05/2025 11h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Cabo P2 para P2 1.8m, Identificação: CAB005 
-[14/05/2025 12h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Adaptador HDMI para VGA, Identificação: ADP001 
-[15/05/2025 10h50] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Retirada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[15/05/2025 10h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo ASA, Identificação: ADA002 
-[15/05/2025 10h53] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo ASA, Identificação: ADA002 
-[15/05/2025 11h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[23/05/2025 15h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Retirada no ativo Cabo P2 para P2 1.8m, Identificação: CAB005 
-[23/05/2025 15h55] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[23/05/2025 16h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Retirada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[26/05/2025 09h45] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Retirada no ativo Telefone Celular Samsung Galaxy S23, Identificação: TEL001 
-[26/05/2025 10h56] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcode, Identificação: ADA001 
-[27/05/2025 15h22] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[27/05/2025 15h23] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[27/05/2025 15h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[27/05/2025 15h30] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Retirada supervisionada no ativo HD Seagate 2TB, Identificação: ARM001 
-[27/05/2025 15h33] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo HD Seagate 2TB, Identificação: ARM001 
-[27/05/2025 15h34] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Retirada supervisionada no ativo HD Seagate 2TB, Identificação: ARM001 
-[27/05/2025 15h34] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo HD Seagate 2TB, Identificação: ARM001 
-[27/05/2025 15h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Retirada supervisionada no ativo HD Seagate 2TB, Identificação: ARM001 
-[27/05/2025 15h38] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[27/05/2025 15h39] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[28/05/2025 14h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Desktop Lenovo ThinkCentre M7206, Identificação: DTP002 
-[28/05/2025 14h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Desktop Custom Gamer4, Identificação: DTP005 
-[28/05/2025 14h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Desktop Custom Gamer, Identificação: DTP005 
-[30/05/2025 11h20] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Cabo USB-C para USB-A 1m, Identificação: CAB002 
-[30/05/2025 11h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Teste de Barcode, Identificação: ADA001 
-[30/05/2025 11h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Teste de Barcode, Identificação: ADA001 
-[30/05/2025 11h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Teste de Barcod, Identificação: ADA001 
-[30/05/2025 11h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Teste de Barcod, Identificação: ADA001 
-[30/05/2025 11h36] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcod, Identificação: ADA001 
-[30/05/2025 11h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[30/05/2025 11h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[30/05/2025 11h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[30/05/2025 11h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[30/05/2025 11h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[30/05/2025 11h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[30/05/2025 11h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[30/05/2025 11h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[30/05/2025 11h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
-[02/06/2025 10h45] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Retirada supervisionada no ativo Teste de Barcod, Identificação: ADA001 
-[02/06/2025 11h27] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcod, Identificação: ADA001 
-[02/06/2025 11h29] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcod, Identificação: ADA001 
-[02/06/2025 11h36] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HDD Western Digital 2TB, Identificação: ARM004 
-[02/06/2025 11h36] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Mouse Sem Fio Microsoft Sculpt, Identificação: MOU002 
-[02/06/2025 11h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Solicitação de Entrada supervisionada no ativo Teste de Barcod, Identificação: ADA001 
-[03/06/2025 10h12] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo HD Seagate 2TB, Identificação: ARM001 
+[10/06/2025 10h12] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone phone2business, Identificação: TEL001 
+[10/06/2025 10h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business, Identificação: TEL001 
+[10/06/2025 10h19] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP 125i, Identificação: TEL002 
+[10/06/2025 10h19] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL001 
+[10/06/2025 10h23] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TS5150, Identificação: TEL003 
+[10/06/2025 10h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras Voiper, Identificação: TEL004 
+[10/06/2025 10h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL002 
+[10/06/2025 10h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL001 
+[10/06/2025 10h34] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo ATA Overtek, Identificação: TEL005 
+[10/06/2025 10h38] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Teste, Identificação: ADA003 
+[10/06/2025 10h43] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL006 
+[10/06/2025 10h44] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Teste, Identificação: ADA003 
+[10/06/2025 10h44] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras Voiper, Identificação: TEL004 
+[10/06/2025 10h44] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TS5150, Identificação: TEL003 
+[10/06/2025 10h44] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL002 
+[10/06/2025 10h45] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL001 
+[10/06/2025 10h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL007 
+[10/06/2025 10h58] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone phone2business PH-200, Identificação: TEL008 
+[10/06/2025 11h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL009 
+[10/06/2025 11h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL010 
+[10/06/2025 11h10] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL011 
+[10/06/2025 11h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL012 
+[10/06/2025 11h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL013 
+[10/06/2025 11h18] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL014 
+[10/06/2025 11h27] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GPX1615, Identificação: TEL015 
+[10/06/2025 11h29] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP 125i, Identificação: TEL016 
+[10/06/2025 11h31] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP125i, Identificação: TEL017 
+[10/06/2025 11h33] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP125i, Identificação: TEL018 
+[10/06/2025 11h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL019 
+[10/06/2025 11h54] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TS40 ID, Identificação: TEL020 
+[10/06/2025 11h56] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo ATA Linksys PAT2T, Identificação: TEL021 
+[10/06/2025 12h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Siemens OpenStage 40 SIP, Identificação: TEL022 
+[10/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL015 
+[10/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo ATA Linksys PAT2T, Identificação: TEL021 
+[10/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL019 
+[10/06/2025 12h10] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP125i, Identificação: TEL018 
+[10/06/2025 12h10] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP125i, Identificação: TEL017 
+[10/06/2025 12h10] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL016 
+[10/06/2025 12h10] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL015 
+[10/06/2025 14h53] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo SSD Kingston 1TB, Identificação: ARM002 
+[10/06/2025 14h54] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Armazenamento, Identificação: ARM004 
+[10/06/2025 14h56] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL023 
+[10/06/2025 14h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP425, Identificação: TEL024 
+[10/06/2025 14h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Arm, Identificação: ARM005 
+[10/06/2025 15h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo ArmArmArm, Identificação: ARM006 
+[10/06/2025 15h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP425, Identificação: TEL025 
+[10/06/2025 15h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP425, Identificação: TEL026 
+[10/06/2025 15h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras 125i, Identificação: TEL027 
+[10/06/2025 15h05] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP 125i, Identificação: TEL028 
+[10/06/2025 15h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo HD Seagate 2TB, Identificação: ARM001 
+[10/06/2025 15h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo HDD Western Digital 2TB, Identificação: ARM003 
+[10/06/2025 15h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Armazenamento, Identificação: ARM004 
+[10/06/2025 15h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Arm, Identificação: ARM005 
+[10/06/2025 15h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo ArmArmArm, Identificação: ARM006 
+[10/06/2025 15h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP 125i, Identificação: TEL029 
+[10/06/2025 15h10] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Nome Arm , Identificação: ARM001 
+[10/06/2025 15h10] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Nome Arm 2, Identificação: ARM002 
+[10/06/2025 15h11] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Nome Arm 3, Identificação: ARM003 
+[10/06/2025 15h11] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Nome Arm 3, Identificação: ARM004 
+[10/06/2025 15h11] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Nome Arm 3, Identificação: ARM005 
+[10/06/2025 15h13] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP 125i, Identificação: TEL030 
+[10/06/2025 15h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Nome Arm 3, Identificação: ARM005 
+[10/06/2025 15h18] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Nome Adp, Identificação: ADA004 
+[10/06/2025 15h18] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Nome Adp, Identificação: ADA005 
+[10/06/2025 15h18] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Nome Adp, Identificação: ADA006 
+[10/06/2025 15h18] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP 125i, Identificação: TEL031 
+[10/06/2025 15h22] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP 125i, Identificação: TEL032 
+[10/06/2025 15h26] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP 125i, Identificação: TEL033 
+[10/06/2025 15h31] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL034 
+[10/06/2025 15h33] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Denwa DW-210P, Identificação: TEL035 
+[10/06/2025 15h34] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Intelbras TIP 125i, Identificação: TEL036 
+[10/06/2025 15h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone phone2business PH-200, Identificação: TEL037 
+[10/06/2025 15h42] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Fanvil X7, Identificação: TEL038 
+[10/06/2025 15h46] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Camera Rally , Identificação: PER001 
+[10/06/2025 17h04] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Speaker Rally, Identificação: PER002 
+[10/06/2025 17h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Mic Pod Rally, Identificação: PER003 
+[10/06/2025 17h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Mic Pod Rally, Identificação: PER004 
+[10/06/2025 17h12] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone phone2business PH-200, Identificação: TEL039 
+[10/06/2025 17h24] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL040 
+[10/06/2025 17h27] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXP1615, Identificação: TEL041 
+[10/06/2025 17h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone phone2business, Identificação: TEL042 
+[10/06/2025 17h30] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandstream GXV3575, Identificação: TEL043 
+[10/06/2025 17h35] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo ATA Overtek , Identificação: TEL044 
+[10/06/2025 17h36] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Elgin TSF-8002 , Identificação: TEL045 
+[10/06/2025 17h38] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Elgin TSF-8002 , Identificação: TEL046 
+[10/06/2025 17h39] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone phone2business PH-200, Identificação: TEL047 
+[10/06/2025 17h58] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone phone2business PH-200, Identificação: TEL048 
+[10/06/2025 18h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefone Grandsteam GXP1615, Identificação: TEL049 
+[11/06/2025 09h40] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Intelbras TIP 125i, Identificação: TEL050 
+[11/06/2025 09h41] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo MOTOROLA, Identificação: TEL051 
+[11/06/2025 09h43] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Intelbras TIP 125i, Identificação: TEL052 
+[11/06/2025 09h44] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Intelbras TIP 125i, Identificação: TEL052 
+[11/06/2025 09h46] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo DENWA, Identificação: TEL052 
+[11/06/2025 09h46] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Intelbras TIP 125i, Identificação: TEL053 
+[11/06/2025 09h49] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Intelbras TS40 ID, Identificação: TEL054 
+[11/06/2025 10h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo DENWA   DW-210P
+, Identificação: TEL055 
+[11/06/2025 10h21] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTRALBRAS TIP125I, Identificação: TEL056 
+[11/06/2025 10h21] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTRALBRAS TIP125I, Identificação: TEL057 
+[11/06/2025 10h29] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo GRANDSTRAM , Identificação: TEL058 
+[11/06/2025 10h32] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo PHONE2BUSINESS  PH-200, Identificação: TEL059 
+[11/06/2025 10h32] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo PHONE2BUSINESS  PH-200, Identificação: TEL060 
+[11/06/2025 11h25] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TS3112 , Identificação: TEL061 
+[11/06/2025 11h51] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Intelbras TS40 ID, Identificação: TEL054 
+[11/06/2025 11h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TIP125I, Identificação: TEL057 
+[11/06/2025 11h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TIP125I, Identificação: TEL056 
+[11/06/2025 11h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandsteam GXP1615, Identificação: TEL049 
+[11/06/2025 11h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL048 
+[11/06/2025 11h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL047 
+[11/06/2025 11h53] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Elgin TSF-8002 , Identificação: TEL046 
+[11/06/2025 11h53] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL002 
+[11/06/2025 11h53] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras Voiper, Identificação: TEL004 
+[11/06/2025 11h56] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TS5150, Identificação: TEL003 
+[11/06/2025 12h06] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Display Hub Rally Kit, Identificação: PER005 
+[11/06/2025 12h06] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Logitech Display Hub Rally Kit, Identificação: PER005 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo ATA Overtek, Identificação: TEL005 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandsteam GXP1615, Identificação: TEL049 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL006 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL048 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL007 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL047 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL008 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo ATA Overtek , Identificação: TEL044 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL009 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXV3575, Identificação: TEL043 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business, Identificação: TEL042 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL041 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL040 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL039 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Fanvil X7, Identificação: TEL038 
+[11/06/2025 12h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL037 
+[11/06/2025 12h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL036 
+[11/06/2025 12h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Denwa DW-210P, Identificação: TEL035 
+[11/06/2025 12h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL034 
+[11/06/2025 12h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL033 
+[11/06/2025 12h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL032 
+[11/06/2025 12h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL031 
+[11/06/2025 12h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL030 
+[11/06/2025 12h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL029 
+[11/06/2025 12h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL028 
+[11/06/2025 12h08] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL010 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL011 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL012 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL013 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras 125i, Identificação: TEL027 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL023 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo ATA Linksys PAT2T, Identificação: TEL021 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL019 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL014 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP125i, Identificação: TEL018 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP125i, Identificação: TEL017 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL015 
+[11/06/2025 12h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL016 
+[11/06/2025 12h10] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL016 
+[11/06/2025 12h10] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL001 
+[11/06/2025 12h11] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TIP125I, Identificação: TEL057 
+[11/06/2025 12h11] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TIP125I, Identificação: TEL056 
+[11/06/2025 12h11] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo DENWA   DW-210P
+, Identificação: TEL055 
+[11/06/2025 12h11] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo DENWA   DW-210P
+, Identificação: TEL055 
+[11/06/2025 12h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo DENWA   DW-210P
+, Identificação: TEL055 
+[11/06/2025 12h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TS3112 , Identificação: TEL061 
+[11/06/2025 12h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TS3112 , Identificação: TEL061 
+[11/06/2025 12h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TS3112 , Identificação: TEL061 
+[11/06/2025 12h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TIP125I, Identificação: TEL057 
+[11/06/2025 12h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo PHONE2BUSINESS  PH-200, Identificação: TEL060 
+[11/06/2025 12h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TS3112 , Identificação: TEL061 
+[11/06/2025 12h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo PHONE2BUSINESS  PH-200, Identificação: TEL059 
+[11/06/2025 12h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo PHONE2BUSINESS  PH-200, Identificação: TEL059 
+[11/06/2025 12h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TIP125I, Identificação: TEL057 
+[11/06/2025 12h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TIP125I, Identificação: TEL056 
+[11/06/2025 12h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo DENWA   DW-210P
+, Identificação: TEL055 
+[11/06/2025 12h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Intelbras TS40 ID, Identificação: TEL054 
+[11/06/2025 12h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo MOTOROLA, Identificação: TEL051 
+[11/06/2025 12h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo MOTOROLA, Identificação: TEL051 
+[11/06/2025 12h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Intelbras TS40 ID, Identificação: TEL054 
+[11/06/2025 12h25] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TS5150, Identificação: TEL003 
+[11/06/2025 12h26] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Fanvil X7, Identificação: TEL038 
+[11/06/2025 12h26] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL039 
+[11/06/2025 12h44] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Intelbras TS40 ID, Identificação: TEL054 
+[11/06/2025 12h45] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Intelbras TS40 ID, Identificação: TEL054 
+[11/06/2025 12h51] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Intelbras TS3112 , Identificação: TEL061 
+[11/06/2025 14h13] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo INTELBRAS TIP125I, Identificação: TEL056 
+[11/06/2025 14h13] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo MOTOROLA, Identificação: TEL051 
+[11/06/2025 14h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Elgin TSF-8002 , Identificação: TEL046 
+[11/06/2025 14h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXV3575, Identificação: TEL043 
+[11/06/2025 14h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business, Identificação: TEL042 
+[11/06/2025 14h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL041 
+[11/06/2025 14h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL040 
+[11/06/2025 14h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL039 
+[11/06/2025 14h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Fanvil X7, Identificação: TEL038 
+[11/06/2025 14h14] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL037 
+[11/06/2025 14h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL036 
+[11/06/2025 14h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Denwa DW-210P, Identificação: TEL035 
+[11/06/2025 14h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL034 
+[11/06/2025 14h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL033 
+[11/06/2025 14h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL032 
+[11/06/2025 14h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL031 
+[11/06/2025 14h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL030 
+[11/06/2025 14h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL029 
+[11/06/2025 14h15] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL028 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras 125i, Identificação: TEL027 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP425, Identificação: TEL026 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP425, Identificação: TEL025 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP425, Identificação: TEL024 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL023 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Siemens OpenStage 40 SIP, Identificação: TEL022 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TS40 ID, Identificação: TEL020 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TS40 ID, Identificação: TEL020 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL019 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP125i, Identificação: TEL018 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP125i, Identificação: TEL017 
+[11/06/2025 14h16] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TIP 125i, Identificação: TEL016 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL015 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL014 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL013 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL012 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL011 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL010 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL009 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone phone2business PH-200, Identificação: TEL008 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL007 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Grandstream GXP1615, Identificação: TEL006 
+[11/06/2025 14h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Telefone Intelbras TS5150, Identificação: TEL003 
+[11/06/2025 14h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Intelbras TIP 125i, Identificação: TEL062 
+[11/06/2025 14h44] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo GRANDSTREAM DP722, Identificação: TEL063 
+[11/06/2025 14h46] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo teste, Identificação: TEL064 
+[11/06/2025 14h46] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo teste, Identificação: TEL064 
+[11/06/2025 14h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TIP 235G, Identificação: TEL064 
+[11/06/2025 14h54] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo GRANDSTREAM DP730, Identificação: TEL065 
+[11/06/2025 14h55] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo GRANDSTREAM DP722, Identificação: TEL066 
+[11/06/2025 14h57] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TS40 ID, Identificação: TEL067 
+[11/06/2025 15h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo GRANDSTREAM GXP1405, Identificação: TEL068 
+[11/06/2025 15h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo PHONE2BUSINESS PH-200, Identificação: TEL069 
+[11/06/2025 15h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo PHONE2BUSINESS PH200, Identificação: TEL070 
+[11/06/2025 15h04] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo VTECH VCS704, Identificação: TEL071 
+[11/06/2025 15h06] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TS5120, Identificação: TEL072 
+[11/06/2025 15h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo ffffff, Identificação: ARM006 
+[11/06/2025 15h07] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo ffffff, Identificação: ARM006 
+[11/06/2025 15h09] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo VTECH VT680, Identificação: TEL073 
+[11/06/2025 15h17] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo UNIDEN DECT 6.0, Identificação: TEL074 
+[11/06/2025 15h19] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo VTECH VT680, Identificação: TEL075 
+[11/06/2025 15h23] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Intelbras TIP 125i, Identificação: TEL053 
+[11/06/2025 15h23] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Intelbras TIP 125i, Identificação: TEL050 
+[11/06/2025 15h27] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo GRANDSTREAM GXP1615, Identificação: TEL076 
+[11/06/2025 15h28] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo UNIDEN DECT 6.0, Identificação: TEL077 
+[11/06/2025 15h30] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo VTECH VT680 , Identificação: TEL078 
+[11/06/2025 15h37] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TS5120, Identificação: TEL079 
+[11/06/2025 15h39] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TIP 125I, Identificação: TEL080 
+[11/06/2025 15h42] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Speaker Rally, Identificação: PER006 
+[11/06/2025 15h44] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Rally Mic Pod, Identificação: PER007 
+[11/06/2025 15h44] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Rally Mic Pod, Identificação: PER008 
+[11/06/2025 15h46] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Speaker Rally, Identificação: PER006 
+[11/06/2025 15h46] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Display Hub Rally Kit, Identificação: PER005 
+[11/06/2025 15h47] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Câmera Rally Kit, Identificação: PER009 
+[11/06/2025 15h48] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Câmera Rally, Identificação: PER009 
+[11/06/2025 15h48] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Camera Rally , Identificação: PER001 
+[11/06/2025 15h48] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Câmera Rally, Identificação: PER009 
+[11/06/2025 15h48] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Câmera Rally, Identificação: PER009 
+[11/06/2025 15h49] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Rally Mic Pod, Identificação: PER008 
+[11/06/2025 15h49] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Rally Mic Pod, Identificação: PER007 
+[11/06/2025 15h49] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Speaker Rally, Identificação: PER006 
+[11/06/2025 15h50] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TIP 125I, Identificação: TEL081 
+[11/06/2025 15h51] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Display Hub Rally Kit, Identificação: PER005 
+[11/06/2025 15h51] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Display Hub Rally Kit, Identificação: PER005 
+[11/06/2025 15h51] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Mic Pod Rally, Identificação: PER004 
+[11/06/2025 15h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Camera Rally , Identificação: PER001 
+[11/06/2025 15h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Speaker Rally, Identificação: PER002 
+[11/06/2025 15h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Editou o ativo Mic Pod Rally, Identificação: PER003 
+[11/06/2025 15h57] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Table Hub Rally, Identificação: PER010 
+[11/06/2025 15h58] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Display Hub Rally, Identificação: PER011 
+[11/06/2025 16h51] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TIP 125I, Identificação: TEL082 
+[11/06/2025 16h52] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TS40 ID , Identificação: TEL083 
+[11/06/2025 16h54] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TS5120, Identificação: TEL084 
+[11/06/2025 16h56] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo INTELBRAS TS5120, Identificação: TEL085 
+[11/06/2025 16h58] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo VTECH VT680 , Identificação: TEL086 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Display Hub Rally, Identificação: PER011 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Table Hub Rally, Identificação: PER010 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Câmera Rally, Identificação: PER009 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Rally Mic Pod, Identificação: PER008 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Rally Mic Pod, Identificação: PER007 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Speaker Rally, Identificação: PER006 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Display Hub Rally Kit, Identificação: PER005 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Mic Pod Rally, Identificação: PER004 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Mic Pod Rally, Identificação: PER003 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Speaker Rally, Identificação: PER002 
+[12/06/2025 09h59] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Camera Rally , Identificação: PER001 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo VTECH VT680 , Identificação: TEL086 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TS5120, Identificação: TEL085 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TS5120, Identificação: TEL084 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TS40 ID , Identificação: TEL083 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TIP 125I, Identificação: TEL082 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TIP 125I, Identificação: TEL081 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TIP 125I, Identificação: TEL080 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TS5120, Identificação: TEL079 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo VTECH VT680 , Identificação: TEL078 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo UNIDEN DECT 6.0, Identificação: TEL077 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo GRANDSTREAM GXP1615, Identificação: TEL076 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo VTECH VT680, Identificação: TEL075 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo UNIDEN DECT 6.0, Identificação: TEL074 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TS5120, Identificação: TEL072 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo VTECH VT680, Identificação: TEL073 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo PHONE2BUSINESS PH-200, Identificação: TEL069 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo PHONE2BUSINESS PH200, Identificação: TEL070 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL011 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL013 
+[12/06/2025 10h00] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL014 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL015 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP 125i, Identificação: TEL016 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP125i, Identificação: TEL017 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL019 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP125i, Identificação: TEL018 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TS40 ID, Identificação: TEL020 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo ATA Linksys PAT2T, Identificação: TEL021 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Siemens OpenStage 40 SIP, Identificação: TEL022 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL023 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP425, Identificação: TEL025 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo VTECH VCS704, Identificação: TEL071 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo GRANDSTREAM GXP1405, Identificação: TEL068 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TS40 ID, Identificação: TEL067 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo GRANDSTREAM DP722, Identificação: TEL066 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo GRANDSTREAM DP730, Identificação: TEL065 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TIP 235G, Identificação: TEL064 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo GRANDSTREAM DP722, Identificação: TEL063 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Intelbras TIP 125i, Identificação: TEL062 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Intelbras TS3112 , Identificação: TEL061 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL012 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP425, Identificação: TEL026 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras 125i, Identificação: TEL027 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP 125i, Identificação: TEL028 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP 125i, Identificação: TEL029 
+[12/06/2025 10h01] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP 125i, Identificação: TEL030 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP 125i, Identificação: TEL031 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP 125i, Identificação: TEL032 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP425, Identificação: TEL024 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL034 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Denwa DW-210P, Identificação: TEL035 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP 125i, Identificação: TEL036 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone phone2business PH-200, Identificação: TEL037 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Fanvil X7, Identificação: TEL038 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone phone2business PH-200, Identificação: TEL039 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL040 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone phone2business, Identificação: TEL042 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL041 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXV3575, Identificação: TEL043 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo ATA Overtek , Identificação: TEL044 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo PHONE2BUSINESS  PH-200, Identificação: TEL060 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo PHONE2BUSINESS  PH-200, Identificação: TEL059 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo GRANDSTRAM , Identificação: TEL058 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TIP125I, Identificação: TEL057 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo INTELBRAS TIP125I, Identificação: TEL056 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo DENWA   DW-210P
+, Identificação: TEL055 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Intelbras TS40 ID, Identificação: TEL054 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Intelbras TIP 125i, Identificação: TEL053 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo DENWA, Identificação: TEL052 
+[12/06/2025 10h02] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo MOTOROLA, Identificação: TEL051 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL010 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP 125i, Identificação: TEL033 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Elgin TSF-8002 , Identificação: TEL046 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone phone2business PH-200, Identificação: TEL047 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone phone2business PH-200, Identificação: TEL048 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandsteam GXP1615, Identificação: TEL049 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Intelbras TIP 125i, Identificação: TEL050 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Elgin TSF-8002 , Identificação: TEL045 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL009 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone phone2business PH-200, Identificação: TEL008 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL007 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Grandstream GXP1615, Identificação: TEL006 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo ATA Overtek, Identificação: TEL005 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras Voiper, Identificação: TEL004 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TS5150, Identificação: TEL003 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone Intelbras TIP 125i, Identificação: TEL002 
+[12/06/2025 10h03] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Deletou o ativo Telefone phone2business PH-200, Identificação: TEL001 
+[12/06/2025 10h04] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Telefonia, Identificação: TEL001 
+[12/06/2025 10h04] Usuário: maria_zefiro, Nome: Maria Couto, Movimentação: Cadastrou novo ativo Periferico, Identificação: PER001 

@@ -151,7 +151,7 @@ export default function AtivosSupervisionados({
                                             borderBottom: `1px solid ${theme.vars.palette.divider}`
                                         }}
                                     >
-                                        <td style={{ padding: '10px 8px', fontWeight: 500 }}>{ativo.nome}</td>
+                                        <td style={{ padding: '10px 8px', fontWeight: 500 }}>{ativo.nome} - {ativo.serial}</td>
                                         <td style={{ padding: '10px 8px' }}>{ativo.descricao}</td>
                                         <td style={{ padding: '10px 8px' }}>{ativo.categoria_nome || ''}</td>
                                         <td style={{ padding: '10px 8px' }}>{ativo.local}</td>

@@ -22,6 +22,7 @@ def editar_ativo():
         descricao = data.get('description')
         estado = data.get('state')
         local = data.get('local')
+        serial = data.get('serial')
         specific_fields = data.get('specificFields', {})
 
         usuario = data.get('user')
@@ -42,9 +43,9 @@ def editar_ativo():
         # Atualizar o ativo na tabela principal
         cursor.execute("""
             UPDATE ativos
-            SET nome = %s, categoria_id = %s, quantidade = %s, descricao = %s, estado = %s, local = %s
+            SET nome = %s, categoria_id = %s, quantidade = %s, descricao = %s, estado = %s, local = %s, serial = %s
             WHERE id = %s
-        """, (nome, categoria_id, quantidade, descricao, estado, local, ativo_id))
+        """, (nome, categoria_id, quantidade, descricao, estado, local, serial, ativo_id))
 
         # Envia alerta se necessário
         if est_alerta is not None and int(quantidade) <= int(est_alerta):
@@ -84,6 +85,14 @@ def editar_ativo():
                 key.lower().replace(" ", "_").replace("ç", "c").replace("ã", "a").replace("í", "i").replace("ê", "e").replace("õ", "o").replace("ó", "o"): value
                 for key, value in specific_fields.items()
             }
+
+            # Tratamento especial para fontes/modular
+            if categoria_id == 7 and 'modular' in normalized_fields:
+                modular_val = normalized_fields['modular']
+                if modular_val == 'Sim' or modular_val == 1 or modular_val == '1':
+                    normalized_fields['modular'] = 1
+                elif modular_val == 'Não' or modular_val == 0 or modular_val == '0':
+                    normalized_fields['modular'] = 0
 
             values = [normalized_fields.get(col) for col in columns]
 

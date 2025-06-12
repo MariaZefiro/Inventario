@@ -22,6 +22,7 @@ def list_monitores():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 mn.tamanho_polegadas,
                 mn.resolucao,
                 mn.tipo_painel,
@@ -29,7 +30,9 @@ def list_monitores():
                 mn.conexoes,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN monitores mn ON a.id = mn.ativo_id;
+            LEFT JOIN monitores mn ON a.id = mn.ativo_id
+            WHERE a.categoria_id = 10
+            ORDER BY a.id;
         """
         cursor.execute(query)
         monitores = cursor.fetchall()

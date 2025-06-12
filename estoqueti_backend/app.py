@@ -1,4 +1,5 @@
 from imports import *
+from config import app_ip
 
 app = Flask(__name__)
 CORS(app)
@@ -30,4 +31,4 @@ def serve_barcode(filename):
     return send_from_directory(BARCODE_DIR, filename)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, port=5000)
+    app.run(host=app_ip, debug=True, port=5000)

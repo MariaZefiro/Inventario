@@ -16,6 +16,35 @@ export default function CadastrarAtivos({
     handleCategoryChange,
     handleSubmit,
 }) {
+
+    // Função para adicionar um campo de serial
+    const handleAddSerial = () => {
+        setFormData((prev) => ({
+            ...prev,
+            serials: [...(prev.serials || []), ''],
+        }));
+    };
+
+    // Função para atualizar um serial específico
+    const handleSerialChange = (idx, value) => {
+        const newSerials = [...(formData.serials || [])];
+        newSerials[idx] = value;
+        setFormData((prev) => ({
+            ...prev,
+            serials: newSerials,
+        }));
+    };
+
+    // Função para remover um campo de serial
+    const handleRemoveSerial = (idx) => {
+        const newSerials = [...(formData.serials || [])];
+        newSerials.splice(idx, 1);
+        setFormData((prev) => ({
+            ...prev,
+            serials: newSerials,
+        }));
+    };
+
     return (
         <Box
             sx={{
@@ -54,7 +83,7 @@ export default function CadastrarAtivos({
                 </Box>
                 <Box>
                     <Typography level="body1" sx={{ marginBottom: 1 }}>
-                        Descrição *
+                        Descrição
                     </Typography>
                     <Textarea
                         placeholder="Digite a descrição"
@@ -106,6 +135,13 @@ export default function CadastrarAtivos({
                             const value = e.target.value;
                             if (/^\d*$/.test(value)) {
                                 handleInputChange('quantity', value);
+                                // Limpa os serials se quantidade <= 1
+                                if (parseInt(value, 10) <= 1) {
+                                    setFormData((prev) => ({
+                                        ...prev,
+                                        serials: [],
+                                    }));
+                                }
                             }
                         }}
                         sx={{ borderRadius: '8px', width: '100%' }}
@@ -133,7 +169,7 @@ export default function CadastrarAtivos({
                     <Autocomplete
                         placeholder="Selecione o local"
                         options={[
-                            'Lab TI', 'TI', 'CGR', 'Engenharia', 'Homologação', 'Aferição', 'Estoque',
+                            'Lab TI', 'TI', 'Administrativo', 'Financeiro', 'Recepção ADM', 'Gerente Financeiro', 'Recepção', 'Sala de Reunião', 'Portaria Call Center', 'Call Center', 'Sala de Reunião Principal Call Center', 'Sala de Reunião Corredor Call Center', 'Sala de Reunião Comercial', 'CGR', 'Aferição', 'Comunicação', 'Desenvolvimento', 'Engenharia', 'Estoque 1 Alocado', 'Estoque 1 Estocado', 'Estoque 2 Alocado', 'Estoque 2 Estocado', 'Estoque 3 Alocado', 'Estoque 3 Estocado', 'Estoque 4 Alocado', 'Estoque 4 Estocado', 'Estoque 5 Alocado', 'Estoque 5 Estocado', 'Expansão', 'Frota', 'Jurídico', 'Logística', 'Loja 1', 'Loja 2', 'Loja 3', 'Loja 4', 'Loja 5', 'Stand 1', 'Patrimônio', 'Projetos', 'RH'
                         ]}
                         value={formData.local}
                         onChange={(event, newValue) => handleInputChange('local', newValue || '')}
@@ -142,6 +178,52 @@ export default function CadastrarAtivos({
                         )}
                         sx={{ width: '100%' }}
                     />
+                </Box>
+                <Box>
+                    <Typography level="body1" sx={{ marginBottom: 1 }}>
+                        Serial Number{formData.quantity > 1 ? 's' : ''}
+                    </Typography>
+                    {parseInt(formData.quantity, 10) > 1 ? (
+                        <>
+                            {(formData.serials || []).map((serial, idx) => (
+                                <Box key={idx} sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                                    <Textarea
+                                        placeholder={`Serial #${idx + 1}`}
+                                        value={serial}
+                                        minRows={1}
+                                        onChange={(e) => handleSerialChange(idx, e.target.value)}
+                                        sx={{ borderRadius: '8px', width: '100%' }}
+                                    />
+                                    <Button
+                                        variant="soft"
+                                        color="danger"
+                                        size="sm"
+                                        sx={{ ml: 1, minWidth: 0, px: 1 }}
+                                        onClick={() => handleRemoveSerial(idx)}
+                                    >
+                                        X
+                                    </Button>
+                                </Box>
+                            ))}
+                            <Button
+                                onClick={handleAddSerial}
+                                color="primary"
+                                variant="outlined"
+                                sx={{ mt: 1, borderRadius: '8px', fontWeight: 'bold' }}
+                                disabled={(formData.serials || []).length >= parseInt(formData.quantity, 10)}
+                            >
+                                Adicionar Serial Number
+                            </Button>
+                        </>
+                    ) : (
+                        <Textarea
+                            placeholder="Digite o serial number"
+                            value={formData.serial || ''}
+                            minRows={1}
+                            onChange={(e) => handleInputChange('serial', e.target.value)}
+                            sx={{ borderRadius: '8px', width: '100%' }}
+                        />
+                    )}
                 </Box>
                 {specificFields.map((field) => (
                     <Box key={field}>
@@ -152,7 +234,13 @@ export default function CadastrarAtivos({
                             <Autocomplete
                                 placeholder="Selecione"
                                 options={['Sim', 'Não']}
-                                value={formData.specificFields[field] || ''}
+                                value={
+                                    formData.specificFields[field] === 1 || formData.specificFields[field] === '1'
+                                        ? 'Sim'
+                                        : formData.specificFields[field] === 0 || formData.specificFields[field] === '0'
+                                            ? 'Não'
+                                            : formData.specificFields[field] || ''
+                                }
                                 onChange={(event, newValue) =>
                                     handleSpecificFieldChange(field, newValue)
                                 }
@@ -204,6 +292,8 @@ export default function CadastrarAtivos({
                             state: '',
                             local: '',
                             type: '',
+                            serial: '',
+                            serials: [],
                             specificFields: {},
                         })
                     }

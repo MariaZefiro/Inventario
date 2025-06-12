@@ -25,7 +25,8 @@ def list_movimentacao():
                 u.nome as usuario_nome,
                 a.id as ativo_id,
                 a.nome as ativo_nome,
-                a.descricao as ativo_descricao
+                a.descricao as ativo_descricao,
+                a.serial as serial
             FROM entradas_saidas es
             JOIN usuarios u ON es.usuario_id = u.id
             JOIN ativos a ON es.ativo_id = a.id;

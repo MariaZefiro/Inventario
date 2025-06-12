@@ -22,13 +22,16 @@ def list_desktops():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 dk.processador,
                 dk.memoria_ram,
                 dk.armazenamento,
                 dk.fonte_alimentacao,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN desktops dk ON a.id = dk.ativo_id;
+            LEFT JOIN desktops dk ON a.id = dk.ativo_id
+            WHERE a.categoria_id = 5
+            ORDER BY a.id;
         """
         cursor.execute(query)
         desktops = cursor.fetchall()

@@ -51,6 +51,7 @@ export default function RowMenu({ row, onSave }) {
         description: editedRow.description,
         state: editedRow.state,
         local: editedRow.local,
+        serial: editedRow.serial,
         specificFields: editedRow.specificFields,
         user: usuario,
         nome: nome,
@@ -270,7 +271,7 @@ export default function RowMenu({ row, onSave }) {
               placeholder="Digite a quantidade"
             />
           </Box>
-        ):(
+        ) : (
           <Box>
             <Typography level="body-sm" sx={{ mb: 0.5 }}>
               Quantidade (Ativo supervisionado)
@@ -325,12 +326,56 @@ export default function RowMenu({ row, onSave }) {
             <Option value="">Selecione o local</Option>
             <Option value="Lab TI">Lab TI</Option>
             <Option value="TI">TI</Option>
+            <Option value="Administrativo">Administrativo</Option>
+            <Option value="Financeiro">Financeiro</Option>
+            <Option value="Recepção ADM">Recepção ADM</Option>
+            <Option value="Gerente Financeiro">Gerente Financeiro</Option>
+            <Option value="Recepção">Recepção </Option>
+            <Option value="Sala de Reunião">Sala de Reunião</Option>
+            <Option value="Portaria Call Center">Portaria Call Center</Option>
+            <Option value="Call Center">Call Center</Option>
+            <Option value="Sala de Reunião Principal Call Center">Sala de Reunião Principal Call Center</Option>
+            <Option value="Sala de Reunião Corredor Call Center">Sala de Reunião Corredor Call Center</Option>
+            <Option value="Sala de Reunião Comercial">Sala de Reunião Comercial</Option>
             <Option value="CGR">CGR</Option>
-            <Option value="Engenharia">Engenharia</Option>
-            <Option value="Homologação">Homologação</Option>
             <Option value="Aferição">Aferição</Option>
-            <Option value="Estoque">Estoque</Option>
+            <Option value="Comunicação">Comunicação</Option>
+            <Option value="Desenvolvimento">Desenvolvimento</Option>
+            <Option value="Engenharia">Engenharia</Option>
+            <Option value="Estoque 1 Alocado">Estoque 1 Alocado</Option>
+            <Option value="Estoque 1 Estocado">Estoque 1 Estocado</Option>
+            <Option value="Estoque 2 Alocado">Estoque 2 Alocado</Option>
+            <Option value="Estoque 2 Estocado">Estoque 2 Estocado</Option>
+            <Option value="Estoque 3 Alocado">Estoque 3 Alocado</Option>
+            <Option value="Estoque 3 Estocado">Estoque 3 Estocado</Option>
+            <Option value="Estoque 4 Alocado">Estoque 4 Alocado</Option>
+            <Option value="Estoque 4 Estocado">Estoque 4 Estocado</Option>
+            <Option value="Estoque 5 Alocado">Estoque 5 Alocado</Option>
+            <Option value="Estoque 5 Estocado">Estoque 5 Estocado</Option>
+            <Option value="Expansão">Expansão</Option>
+            <Option value="Frota">Frota</Option>
+            <Option value="Jurídico">Jurídico</Option>
+            <Option value="Logística">Logística</Option>
+            <Option value="Loja 1">Loja 1</Option>
+            <Option value="Loja 2">Loja 2</Option>
+            <Option value="Loja 3">Loja 3</Option>
+            <Option value="Loja 4">Loja 4</Option>
+            <Option value="Loja 5">Loja 5</Option>
+            <Option value="Stand 1">Stand 1</Option>
+            <Option value="Patrimônio">Patrimônio</Option>
+            <Option value="Projetos">Projetos</Option>
+            <Option value="RH">RH</Option>
           </Select>
+        </Box>
+        <Box>
+          <Typography level="body-sm" sx={{ mb: 0.5 }}>
+            Serial Number
+          </Typography>
+          <Input
+            value={editedRow.serial || ''}
+            onChange={(e) => setEditedRow({ ...editedRow, serial: e.target.value })}
+            placeholder="Digite o Serial Number"
+          />
         </Box>
       </Box>
     );
@@ -521,11 +566,25 @@ export default function RowMenu({ row, onSave }) {
             <Typography level="body-sm" sx={{ mb: 0.5 }}>
               Modular
             </Typography>
-            <Input
-              value={editedRow.specificFields?.modular || ''}
-              onChange={(e) => handleSpecificFieldChange('modular', e.target.value)}
-              placeholder="Digite se é modular (1 para Sim, 0 para Não)"
-            />
+            <Select
+              value={
+                editedRow.specificFields?.modular === 1 || editedRow.specificFields?.modular === '1'
+                  ? 'Sim'
+                  : editedRow.specificFields?.modular === 0 || editedRow.specificFields?.modular === '0'
+                    ? 'Não'
+                    : ''
+              }
+              onChange={(_, value) =>
+                handleSpecificFieldChange('modular', value === 'Sim' ? 1 : value === 'Não' ? 0 : '')
+              }
+              placeholder="Selecione"
+              sx={{ width: '100%' }}
+              slotProps={{ listbox: { sx: { zIndex: 13000 } } }}
+            >
+              <Option value="">Selecione</Option>
+              <Option value="Sim">Sim</Option>
+              <Option value="Não">Não</Option>
+            </Select>
           </Box>
         </>
       );

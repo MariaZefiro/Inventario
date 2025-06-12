@@ -22,12 +22,15 @@ def list_adaptadores():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 ad.tipo,
                 ad.conexao_entrada,
                 ad.conexao_saida,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN adaptadores ad ON a.id = ad.ativo_id;
+            LEFT JOIN adaptadores ad ON a.id = ad.ativo_id
+            WHERE a.categoria_id = 1
+            ORDER BY a.id;
         """
         cursor.execute(query)
         adaptadores = cursor.fetchall()

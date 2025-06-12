@@ -23,6 +23,7 @@ export default function Gerenciar() {
         state: '',
         local: '',
         type: '',
+        serial: '',
         specificFields: {},
     });
 
@@ -184,17 +185,39 @@ export default function Gerenciar() {
                 return;
             }
 
-            const payload = {
+            const quantidade = parseInt(formData.quantity, 10);
+            let payload = {
                 name: formData.name,
                 category_id: category_id,
-                quantity: formData.quantity,
+                quantity: quantidade,
                 description: formData.description,
                 state: formData.state,
                 local: formData.local,
-                specificFields: formData.specificFields,
+                serial: formData.serial, 
+                specificFields: {
+                    ...formData.specificFields,
+                    ...(formData.category === 'Fontes' && formData.specificFields.Modular
+                        ? { Modular: formData.specificFields.Modular === 'Sim' ? 1 : 0 }
+                        : {}),
+                },
                 user: usuario,
                 nome: nome,
             };
+
+            // Lógica para SNs
+            if (quantidade === 1) {
+                // payload já está correto
+            } else if (quantidade > 1) {
+                const serials = (formData.serials || []).map(s => (s || '').trim()).filter(s => s !== '');
+                if (serials.length === 0) {
+                    // Nenhum SN preenchido, não envia serials (backend trata)
+                } else if (serials.length === quantidade) {
+                    payload.serials = serials;
+                } else {
+                    setAlert({ severity: 'warning', message: 'Se for informar números de série, preencha todos os campos de serial ou deixe todos em branco.' });
+                    return;
+                }
+            }
 
             const response = await fetch(`${backendIp}/api/cadastrar_ativo`, {
                 method: 'POST',
@@ -202,7 +225,10 @@ export default function Gerenciar() {
                 body: JSON.stringify(payload),
             });
 
-            if (!response.ok) throw new Error('Erro ao adicionar ativo');
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Erro ao adicionar ativo');
+            }
             setAlert({ severity: 'success', message: 'Ativo adicionado com sucesso!' });
             setFormData({
                 name: '',
@@ -212,11 +238,13 @@ export default function Gerenciar() {
                 state: '',
                 local: '',
                 type: '',
+                serial: '', 
+                serials: [],
                 specificFields: {},
             });
         } catch (error) {
             console.error('Erro ao adicionar componente:', error);
-            setAlert({ severity: 'danger', message: 'Erro ao adicionar componente.' });
+            setAlert({ severity: 'danger', message: error.message || 'Erro ao adicionar componente.' });
         }
     };
 

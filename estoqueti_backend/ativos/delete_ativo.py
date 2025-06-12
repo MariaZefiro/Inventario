@@ -49,6 +49,7 @@ def delete_ativo():
 
     except Exception as e:
         conn.rollback()
+        print(e)
         return jsonify({"error": f"Erro ao deletar ativo: {str(e)}"}), 500
     finally:
         close_connection(conn)

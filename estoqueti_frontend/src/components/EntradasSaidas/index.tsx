@@ -41,6 +41,7 @@ export default function EntradasSaidas() {
                     ativo: {
                         nome: item.ativo_nome,
                         descricao: item.ativo_descricao,
+                        serial: item.serial, 
                     },
                     movimentacao: item.movimentacao,
                     quantidade: item.quantidade,

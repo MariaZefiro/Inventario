@@ -22,13 +22,16 @@ def list_redes():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 rd.tipo,
                 rd.velocidade,
                 rd.interface,
                 rd.protocolo_suportado,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN redes rd ON a.id = rd.ativo_id;
+            LEFT JOIN redes rd ON a.id = rd.ativo_id
+            WHERE a.categoria_id = 14
+            ORDER BY a.id;
         """
         cursor.execute(query)
         redes = cursor.fetchall()

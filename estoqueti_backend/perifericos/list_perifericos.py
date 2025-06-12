@@ -22,12 +22,15 @@ def list_perifericos():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 pf.tipo,
                 pf.conexao,
                 pf.marca,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN perifericos pf ON a.id = pf.ativo_id;
+            LEFT JOIN perifericos pf ON a.id = pf.ativo_id
+            WHERE a.categoria_id = 13
+            ORDER BY a.id;
         """
         cursor.execute(query)
         perifericos = cursor.fetchall()

@@ -22,12 +22,15 @@ def list_telefonia():
                 a.identificacao,
                 a.estado,
                 a.local,
+                a.serial,
                 tf.tipo,
                 tf.tecnologia,
                 tf.compatibilidade,
                 a.supervisionado
             FROM ativos a
-            INNER JOIN telefonia tf ON a.id = tf.ativo_id;
+            LEFT JOIN telefonia tf ON a.id = tf.ativo_id
+            WHERE a.categoria_id = 15
+            ORDER BY a.id;
         """
         cursor.execute(query)
         telefonia = cursor.fetchall()

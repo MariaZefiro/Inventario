@@ -19,33 +19,24 @@ def cadastrar_ativo():
         data = request.json
         nome = data.get('name')
         categoria_id = data.get('category_id')
-        quantidade = data.get('quantity')
+        quantidade = int(data.get('quantity'))
         descricao = data.get('description')
         estado = data.get('state')
         local = data.get('local')
+        serial = data.get('serial')
+        serials = data.get('serials', [])
         specific_fields = data.get('specificFields', {})
-
         usuario = data.get('user') 
         nome_usuario = data.get('nome')
 
-        # Verificar o número de entradas para a categoria
-        cursor = conn.cursor()
-        cursor.execute("""
-            SELECT COUNT(*) 
-            FROM ativos 
-            WHERE categoria_id = %s
-        """, (categoria_id,))
-        total_entries = cursor.fetchone()[0]
-
-        # Buscar o maior número já existente para a categoria
         cursor = conn.cursor()
         cursor.execute("SELECT nome FROM categorias WHERE id = %s", (categoria_id,))
         category_name = cursor.fetchone()
         if not category_name:
             return jsonify({"error": "Categoria inválida"}), 400
-
         prefix = category_name[0][:3].upper()
 
+        # Buscar todos identificadores já existentes para a categoria
         cursor.execute("""
             SELECT identificacao FROM ativos WHERE categoria_id = %s AND identificacao LIKE %s
         """, (categoria_id, f"{prefix}%"))
@@ -53,7 +44,6 @@ def cadastrar_ativo():
         max_number = 0
         for row in identificacoes:
             ident = row[0]
-            # Extrai a parte numérica do identificador (ex: ADA002 -> 2)
             try:
                 number_part = int(ident[len(prefix):])
                 if number_part > max_number:
@@ -61,26 +51,6 @@ def cadastrar_ativo():
             except Exception:
                 continue
         next_number = max_number + 1
-        identificacao = f"{prefix}{str(next_number).zfill(3)}"
-
-        # Gerar o caminho absoluto para o código de barras
-        barcode_path = os.path.join(BARCODE_DIR, f"{identificacao}")
-        try:
-            # Garantir que o diretório de códigos de barras exista
-            os.makedirs(BARCODE_DIR, exist_ok=True)
-            
-            # Gerar e salvar o código de barras
-            barcode = Code128(identificacao, writer=ImageWriter())
-            barcode.save(barcode_path)
-        except Exception as barcode_error:
-            return jsonify({"error": f"Erro ao gerar código de barras: {str(barcode_error)}"}), 500
-
-        # Inserir o ativo no banco de dados
-        cursor.execute("""
-            INSERT INTO ativos (nome, categoria_id, quantidade, descricao, identificacao, estado, local)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
-        """, (nome, categoria_id, quantidade, descricao, identificacao, estado, local))
-        ativo_id = cursor.lastrowid 
 
         # Mapeamento de categorias para tabelas e colunas
         category_mapping = {
@@ -98,34 +68,163 @@ def cadastrar_ativo():
             15: ("telefonia", ["tipo", "tecnologia", "compatibilidade"]),
         }
 
-        # Inserir os campos específicos na tabela correspondente
-        if specific_fields and categoria_id in category_mapping:
-            table_name, columns = category_mapping[categoria_id]
-            column_placeholders = ", ".join(["%s"] * len(columns))
-            column_names = ", ".join(columns)
+        ativos_cadastrados = []
 
-            normalized_fields = {
-                key.lower().replace(" ", "_").replace("ç", "c").replace("ã", "a").replace("í", "i").replace("ê", "e").replace("õ", "o").replace("ó", "o"): value
-                for key, value in specific_fields.items()
-            }
-            values = [normalized_fields.get(col) for col in columns]
+        if quantidade == 1:
+            # Único ativo, com ou sem serial
+            identificacao = f"{prefix}{str(next_number).zfill(3)}"
+            barcode_path = os.path.join(BARCODE_DIR, f"{identificacao}")
+            try:
+                os.makedirs(BARCODE_DIR, exist_ok=True)
+                barcode = Code128(identificacao, writer=ImageWriter())
+                barcode.save(barcode_path)
+            except Exception as barcode_error:
+                return jsonify({"error": f"Erro ao gerar código de barras: {str(barcode_error)}"}), 500
 
-            cursor.execute(f"""
-                INSERT INTO {table_name} (ativo_id, {column_names})
-                VALUES (%s, {column_placeholders})
-            """, [ativo_id] + values)
+            cursor.execute("""
+                INSERT INTO ativos (nome, categoria_id, quantidade, descricao, identificacao, estado, local, serial)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """, (nome, categoria_id, 1, descricao, identificacao, estado, local, serial or None))
+            ativo_id = cursor.lastrowid
+
+            # Campos específicos
+            if specific_fields and categoria_id in category_mapping:
+                table_name, columns = category_mapping[categoria_id]
+                column_placeholders = ", ".join(["%s"] * len(columns))
+                column_names = ", ".join(columns)
+                normalized_fields = {
+                    key.lower().replace(" ", "_").replace("ç", "c").replace("ã", "a").replace("í", "i").replace("ê", "e").replace("õ", "o").replace("ó", "o"): value
+                    for key, value in specific_fields.items()
+                }
+                if categoria_id == 7 and 'modular' in normalized_fields:
+                    modular_val = normalized_fields['modular']
+                    if modular_val == 'Sim' or modular_val == 1 or modular_val == '1':
+                        normalized_fields['modular'] = 1
+                    elif modular_val == 'Não' or modular_val == 0 or modular_val == '0':
+                        normalized_fields['modular'] = 0
+                values = [normalized_fields.get(col) for col in columns]
+                cursor.execute(f"""
+                    INSERT INTO {table_name} (ativo_id, {column_names})
+                    VALUES (%s, {column_placeholders})
+                """, [ativo_id] + values)
+
+            log_message = (
+                f"[{datetime.now().strftime('%d/%m/%Y %Hh%M')}] "
+                f"Usuário: {usuario}, Nome: {nome_usuario}, Movimentação: Cadastrou novo ativo {nome}, Identificação: {identificacao} "
+            )
+            with open('/home/usshd/estoque_ti/estoqueti_backend/logs.log', 'a') as log_file:
+                log_file.write(log_message + '\n')
+
+            ativos_cadastrados.append({
+                "identificacao": identificacao,
+                "barcode_path": barcode_path
+            })
+
+        elif quantidade > 1:
+            serials = [s for s in serials if s and str(s).strip() != '']
+            if len(serials) == 0:
+                # Quantidade > 1 e nenhum SN preenchido
+                identificacao = f"{prefix}{str(next_number).zfill(3)}"
+                barcode_path = os.path.join(BARCODE_DIR, f"{identificacao}")
+                try:
+                    os.makedirs(BARCODE_DIR, exist_ok=True)
+                    barcode = Code128(identificacao, writer=ImageWriter())
+                    barcode.save(barcode_path)
+                except Exception as barcode_error:
+                    return jsonify({"error": f"Erro ao gerar código de barras: {str(barcode_error)}"}), 500
+
+                cursor.execute("""
+                    INSERT INTO ativos (nome, categoria_id, quantidade, descricao, identificacao, estado, local, serial)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                """, (nome, categoria_id, quantidade, descricao, identificacao, estado, local, None))
+                ativo_id = cursor.lastrowid
+
+                if specific_fields and categoria_id in category_mapping:
+                    table_name, columns = category_mapping[categoria_id]
+                    column_placeholders = ", ".join(["%s"] * len(columns))
+                    column_names = ", ".join(columns)
+                    normalized_fields = {
+                        key.lower().replace(" ", "_").replace("ç", "c").replace("ã", "a").replace("í", "i").replace("ê", "e").replace("õ", "o").replace("ó", "o"): value
+                        for key, value in specific_fields.items()
+                    }
+                    if categoria_id == 7 and 'modular' in normalized_fields:
+                        modular_val = normalized_fields['modular']
+                        if modular_val == 'Sim' or modular_val == 1 or modular_val == '1':
+                            normalized_fields['modular'] = 1
+                        elif modular_val == 'Não' or modular_val == 0 or modular_val == '0':
+                            normalized_fields['modular'] = 0
+                    values = [normalized_fields.get(col) for col in columns]
+                    cursor.execute(f"""
+                        INSERT INTO {table_name} (ativo_id, {column_names})
+                        VALUES (%s, {column_placeholders})
+                    """, [ativo_id] + values)
+
+                log_message = (
+                    f"[{datetime.now().strftime('%d/%m/%Y %Hh%M')}] "
+                    f"Usuário: {usuario}, Nome: {nome_usuario}, Movimentação: Cadastrou novo ativo {nome}, Identificação: {identificacao} "
+                )
+                with open('/home/usshd/estoque_ti/estoqueti_backend/logs.log', 'a') as log_file:
+                    log_file.write(log_message + '\n')
+
+                ativos_cadastrados.append({
+                    "identificacao": identificacao,
+                    "barcode_path": barcode_path
+                })
+            elif len(serials) == quantidade:
+                # Quantidade > 1 e todos os SNs preenchidos
+                for idx, serial_item in enumerate(serials):
+                    identificacao = f"{prefix}{str(next_number + idx).zfill(3)}"
+                    barcode_path = os.path.join(BARCODE_DIR, f"{identificacao}")
+                    try:
+                        os.makedirs(BARCODE_DIR, exist_ok=True)
+                        barcode = Code128(identificacao, writer=ImageWriter())
+                        barcode.save(barcode_path)
+                    except Exception as barcode_error:
+                        return jsonify({"error": f"Erro ao gerar código de barras: {str(barcode_error)}"}), 500
+
+                    cursor.execute("""
+                        INSERT INTO ativos (nome, categoria_id, quantidade, descricao, identificacao, estado, local, serial)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                    """, (nome, categoria_id, 1, descricao, identificacao, estado, local, serial_item))
+                    ativo_id = cursor.lastrowid
+
+                    if specific_fields and categoria_id in category_mapping:
+                        table_name, columns = category_mapping[categoria_id]
+                        column_placeholders = ", ".join(["%s"] * len(columns))
+                        column_names = ", ".join(columns)
+                        normalized_fields = {
+                            key.lower().replace(" ", "_").replace("ç", "c").replace("ã", "a").replace("í", "i").replace("ê", "e").replace("õ", "o").replace("ó", "o"): value
+                            for key, value in specific_fields.items()
+                        }
+                        if categoria_id == 7 and 'modular' in normalized_fields:
+                            modular_val = normalized_fields['modular']
+                            if modular_val == 'Sim' or modular_val == 1 or modular_val == '1':
+                                normalized_fields['modular'] = 1
+                            elif modular_val == 'Não' or modular_val == 0 or modular_val == '0':
+                                normalized_fields['modular'] = 0
+                        values = [normalized_fields.get(col) for col in columns]
+                        cursor.execute(f"""
+                            INSERT INTO {table_name} (ativo_id, {column_names})
+                            VALUES (%s, {column_placeholders})
+                        """, [ativo_id] + values)
+
+                    log_message = (
+                        f"[{datetime.now().strftime('%d/%m/%Y %Hh%M')}] "
+                        f"Usuário: {usuario}, Nome: {nome_usuario}, Movimentação: Cadastrou novo ativo {nome}, Identificação: {identificacao} "
+                    )
+                    with open('/home/usshd/estoque_ti/estoqueti_backend/logs.log', 'a') as log_file:
+                        log_file.write(log_message + '\n')
+
+                    ativos_cadastrados.append({
+                        "identificacao": identificacao,
+                        "barcode_path": barcode_path
+                    })
+            else:
+                # Quantidade > 1 e apenas alguns SNs preenchidos
+                return jsonify({"error": "Se for informar números de série, preencha todos ou nenhum."}), 400
 
         conn.commit()
-
-        # Adicionar entrada no log
-        log_message = (
-            f"[{datetime.now().strftime('%d/%m/%Y %Hh%M')}] "
-            f"Usuário: {usuario}, Nome: {nome_usuario}, Movimentação: Cadastrou novo ativo {nome}, Identificação: {identificacao} "
-        )
-        with open('/home/usshd/estoque_ti/estoqueti_backend/logs.log', 'a') as log_file:
-            log_file.write(log_message + '\n')
-
-        return jsonify({"message": "Ativo cadastrado com sucesso", "identificacao": identificacao, "barcode_path": barcode_path}), 200
+        return jsonify({"message": "Ativo(s) cadastrado(s) com sucesso", "ativos": ativos_cadastrados}), 200
 
     except Exception as e:
         conn.rollback()

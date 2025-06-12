@@ -363,7 +363,7 @@ export default function OrderTable({ data, type, onFilteredChange }: OrderTableP
           value={searchQuery}
           onChange={(event) => setSearchQuery(event.target.value)}
           startDecorator={<SearchIcon />}
-          sx={{ flexGrow: 1, border:'1px solid #a2a2a2' }}
+          sx={{ flexGrow: 1, border: '1px solid #a2a2a2' }}
         />
         <IconButton
           size="sm"
@@ -410,7 +410,7 @@ export default function OrderTable({ data, type, onFilteredChange }: OrderTableP
             value={searchQuery}
             onChange={(event) => setSearchQuery(event.target.value)}
             startDecorator={<SearchIcon />}
-            sx={{border:'1px solid #a2a2a2'}}
+            sx={{ border: '1px solid #a2a2a2' }}
           />
         </FormControl>
         {renderFilters()}
@@ -449,7 +449,7 @@ export default function OrderTable({ data, type, onFilteredChange }: OrderTableP
           borderRadius: 'sm',
           flexShrink: 1,
           overflow: 'auto',
-          maxHeight: '100%', 
+          maxHeight: '100%',
           minHeight: 0,
         }}
       >
@@ -458,7 +458,7 @@ export default function OrderTable({ data, type, onFilteredChange }: OrderTableP
           stickyHeader
           hoverRow
           sx={{
-            border:'1px solid rgba(162, 162, 162, 0.14)',
+            border: '1px solid rgba(162, 162, 162, 0.14)',
             '--TableCell-headBackground': 'var(--joy-palette-background-level1)',
             '--Table-headerUnderlineThickness': '1px',
             '--TableRow-hoverBackground': 'var(--joy-palette-background-level1)',
@@ -840,7 +840,15 @@ export default function OrderTable({ data, type, onFilteredChange }: OrderTableP
               <Divider sx={{ gridColumn: '1 / -1' }} />
               <Box sx={{ display: 'flex', gap: 1 }}>
                 <Typography level="body-sm" color="neutral">Ativo:</Typography>
-                <Typography level="body-md">{manageRow.ativo?.nome}</Typography>
+                <Typography level="body-md">
+                  {manageRow.ativo?.nome}
+                  {manageRow.ativo?.serial && (
+                    <span style={{ marginLeft: 15 }}>
+                      <Typography level="body-sm" color="neutral">Serial Number: </Typography>
+                      <Typography level="body-md">{manageRow.ativo.serial}</Typography>
+                    </span>
+                  )}
+                </Typography>
               </Box>
               <Divider sx={{ gridColumn: '1 / -1' }} />
               <Box sx={{ display: 'flex', gap: 1 }}>
